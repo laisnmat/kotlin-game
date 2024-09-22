@@ -1,0 +1,42 @@
+target/
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+# FXGL #
+saves/
+profiles/
+system/
+editor_json/
+*.json
+
+# FXGL Tests #
+testprofiles/
+
+
+# Common save file ext #
+*.sav
+*.prefs
+
+# Auto-generated CHANGELOG #
+CHANGELOG_RAW.md
+CHANGELOG.md
+
+# logs #
+*.log
+logs/
+*.lck
+
+# maven #
+dependency-reduced-pom.xml
+
+*.class

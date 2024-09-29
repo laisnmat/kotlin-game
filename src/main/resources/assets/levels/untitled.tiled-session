@@ -1,0 +1,61 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "grass_island..tmx": {
+            "scale": 0.6110677083333332,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 384.57276795226926,
+                "y": 747.8712976773919
+            }
+        },
+        "grass_island.tmx": {
+            "scale": 0.6110677083333332,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 639.8636266780311,
+                "y": 767.5090560409121
+            }
+        },
+        "grass_island.tmx#tileset": {
+            "scaleInDock": 1
+        },
+        "map.tmx": {
+            "scale": 0.9274374999999999,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 800.0539119886785,
+                "y": 400.02695599433923
+            }
+        },
+        "map.tmx#tileset": {
+            "scaleInDock": 1
+        }
+    },
+    "last.imagePath": "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/tp-acvl-kotlin/src/main/resources/assets/levels",
+    "map.height": 50,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 100,
+    "openFiles": [
+    ],
+    "project": "untitled.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    },
+    "tileset.useTransparentColor": true
+}

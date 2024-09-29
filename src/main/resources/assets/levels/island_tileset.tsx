@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset version="1.10" tiledversion="1.11.0" name="island_tileset" tilewidth="16" tileheight="16" tilecount="189" columns="21">
- <image source="../textures/tileset.png" trans="ff00ff" width="336" height="144"/>
+ <image source="tileset.png" trans="ff00ff" width="336" height="144"/>
  <tile id="22" probability="5"/>
  <tile id="45" probability="0.5"/>
  <tile id="46" probability="0.5"/>

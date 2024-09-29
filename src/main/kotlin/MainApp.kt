@@ -26,8 +26,8 @@ class MainApp : GameApplication() {
     }
 
     override fun initGame() {
-        println("initGame called")
-        FXGL.getGameScene().viewport.setBounds(0, 0, 1280, 1536) // Définir les limites de la caméra
+        println("initGame called") // Message de débogage
+        FXGL.getGameScene().viewport.setBounds(0, 0, 80*16, 96*16) // Définir les limites de la caméra
         model = GameModel()
         view = GameView(model)
         controller = GameController(model, view)
@@ -46,12 +46,7 @@ class MainApp : GameApplication() {
     override fun initInput() {
         // Supprimez l'appel à configureInput(), car il est maintenant fait dans initGame().
     }
-
-    override fun initPhysics() {
-        // Pas de physique pour l'instant
-    }
 }
-
 
 fun main() {
     GameApplication.launch(MainApp::class.java, emptyArray())

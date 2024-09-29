@@ -1,0 +1,57 @@
+{
+    "activeFile": "",
+    "expandedProjectPaths": [
+        ".",
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/tp-acvl-kotlin/src/main/resources/assets/levels"
+    ],
+    "fileStates": {
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/tp-acvl-kotlin/src/main/resources/assets/levels/grass_island.tmx": {
+            "scale": 1.4423,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 65.17368092629829,
+                "y": 804.270956111766
+            }
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/tp-acvl-kotlin/src/main/resources/assets/levels/island_tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3.69
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/tp-acvl-kotlin/src/main/resources/assets/levels/sland_tileset.tsx": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/tp-acvl-kotlin/src/main/resources/assets/levels/test.tmx": {
+            "scale": 0.61,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 259.01639344262287,
+                "y": 781.967213114754
+            }
+        },
+        "grass_island.tmx": {
+            "scale": 0.6355,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 383.16286388670346,
+                "y": 560.1888276947287
+            }
+        },
+        "island_tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.2885
+        }
+    },
+    "last.exportedFilePath": "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/tp-acvl-kotlin/src/main/resources/assets/levels",
+    "map.lastUsedExportFilter": "Fichiers de carte Tiled (*.tmx *.xml)",
+    "map.lastUsedFormat": "tmx",
+    "openFiles": [
+    ],
+    "project": "untitled.tiled-project",
+    "recentFiles": [
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/tp-acvl-kotlin/src/main/resources/assets/levels/test.tmx",
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/tp-acvl-kotlin/src/main/resources/assets/levels/island_tileset.tsx",
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/tp-acvl-kotlin/src/main/resources/assets/levels/grass_island.tmx",
+        "island_tileset.tsx",
+        "grass_island.tmx"
+    ]
+}

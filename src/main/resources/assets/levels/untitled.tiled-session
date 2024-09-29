@@ -29,6 +29,10 @@
         "grass_island.tmx#tileset": {
             "scaleInDock": 1
         },
+        "island_tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "map.tmx": {
             "scale": 0.9274374999999999,
             "selectedLayer": 0,
@@ -39,6 +43,10 @@
         },
         "map.tmx#tileset": {
             "scaleInDock": 1
+        },
+        "tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
         }
     },
     "last.imagePath": "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/tp-acvl-kotlin/src/main/resources/assets/levels",
@@ -51,6 +59,11 @@
     ],
     "project": "untitled.tiled-project",
     "recentFiles": [
+        "island_tileset.tsx",
+        "grass_island.tmx",
+        "grass_island..tmx",
+        "map.tmx",
+        "tileset.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

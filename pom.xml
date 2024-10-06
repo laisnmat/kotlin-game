@@ -59,7 +59,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
                 <configuration>
-                    <mainClass>com.ensimag.MainAppKt</mainClass>
+                    <mainClass>com.ensimag.ETCIAppKt</mainClass>
                 </configuration>
             </plugin>
         </plugins>

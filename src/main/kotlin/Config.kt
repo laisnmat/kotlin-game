@@ -27,6 +27,11 @@ object Vars{
     var MAP_HEIGHT: Int = 0
     var MAP_WIDTH: Int = 0
     var PLAYER_SPEED: Double = 100.0
+    var CHICKEN_SPEED: Double = 20.0
+    var NPC_IDLE_TIME: Double = 5.0
+    var NPC_RANDOM_IDLE_TIME: Double = 10.0
+    var DISTANCE_RANDOM_WALK: Double = 4.0
+
 }
 
 private val log = Logger.get("Main")

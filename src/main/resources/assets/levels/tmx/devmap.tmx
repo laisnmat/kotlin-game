@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="50" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="54">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="50" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="300">
  <tileset firstgid="1" name="overworld" tilewidth="16" tileheight="16" tilecount="1440" columns="40">
   <image source="Overworld.png" trans="ff00ff" width="640" height="576"/>
  </tileset>
@@ -126,17 +126,121 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
-<!--  <objectgroup color="#d70000" id="8" name="OutOfBoudArea" class="Bound"> -->
-<!--   <object id="50" type="Bound" x="0" y="0" width="800" height="31"> -->
-<!--    <polygon points="0,0 800,0 800,48 720,48 720,32 624,32 624,48 592,48 592,64 560,64 560,96 576,96 576,128 592,128 592,176 528,176 528,192 512,192 512,208 496,208 496,224 432,224 432,80 400,80 400,64 336,64 336,112 224,112 224,96 208,96 208,48 64,48 64,64 48,64 48,176 96,176 96,240 48,240 48,272 64,272 64,288 368,288 368,272 384,272 384,256 432,256 432,240 496,240 496,272 512,272 512,288 608,288 608,272 624,272 624,256 640,256 640,192 624,192 624,176 608,176 608,128 752,128 752,48 800,48 800,320 0,320"/> -->
-<!--   </object> -->
-<!--   <object id="51" type="Bound" x="130.573" y="197.14"> -->
-<!--    <polygon points="189.427,10.8602 189.427,42.8602 -18.5731,42.8602 -18.5731,-21.1398 61.4269,-21.1398 61.4269,-37.1398 77.4269,-37.1398 77.4269,-53.1398 93.4269,-53.1398 93.4269,-69.1398 205.427,-69.1398 205.427,10.8602"/> -->
-<!--   </object> -->
-<!--  </objectgroup> -->
-<!--  <objectgroup id="9" name="Spawn_Point" class="Origin"> -->
-<!--   <object id="52" x="80" y="112"> -->
-<!--    <point/> -->
-<!--   </object> -->
-<!--  </objectgroup> -->
+ <objectgroup id="7" name="Walkable_area">
+  <object id="16" type="Nav" x="336" y="64" width="64" height="192">
+   <properties>
+    <property name="island_id" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="17" type="Nav" x="192" y="48" width="16" height="112">
+   <properties>
+    <property name="island_id" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="18" type="Nav" x="208.195" y="96" width="16" height="48">
+   <properties>
+    <property name="island_id" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="19" type="Nav" x="48" y="64" width="16" height="112">
+   <properties>
+    <property name="island_id" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="21" type="Bridge" x="224" y="112.309" width="112" height="15.691"/>
+  <object id="22" type="Nav" x="64" y="48" width="128.173" height="128">
+   <properties>
+    <property name="island_id" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="23" type="Nav" x="400" y="80" width="32" height="176">
+   <properties>
+    <property name="island_id" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="24" type="Bridge" x="432" y="224" width="64" height="15.691"/>
+  <object id="25" type="Nav" x="64" y="240" width="272" height="48">
+   <properties>
+    <property name="island_id" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="26" type="Nav" x="336" y="256" width="32" height="32">
+   <properties>
+    <property name="island_id" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="28" type="Nav" x="368" y="256" width="16" height="16">
+   <properties>
+    <property name="island_id" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="29" type="Nav" x="320" y="208" width="16" height="32">
+   <properties>
+    <property name="island_id" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="30" type="Bridge" x="96" y="176" width="16" height="64"/>
+  <object id="31" type="Nav" x="48" y="240" width="16" height="32">
+   <properties>
+    <property name="island_id" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="32" type="Bridge" x="592" y="128" width="16" height="48"/>
+  <object id="33" type="Nav" x="496" y="208" width="64" height="48">
+   <properties>
+    <property name="island_id" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="34" type="Nav" x="560.263" y="176" width="63.737" height="80">
+   <properties>
+    <property name="island_id" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="35" type="Nav" x="495.08" y="256" width="128.92" height="15.983">
+   <properties>
+    <property name="island_id" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="36" type="Nav" x="512" y="272" width="96" height="15.983">
+   <properties>
+    <property name="island_id" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="37" type="Nav" x="528" y="176" width="32" height="32">
+   <properties>
+    <property name="island_id" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="38" type="Nav" x="512" y="192" width="16" height="16">
+   <properties>
+    <property name="island_id" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="39" type="Nav" x="592" y="48" width="160" height="80">
+   <properties>
+    <property name="island_id" type="int" value="4"/>
+   </properties>
+  </object>
+  <object id="40" type="Nav" x="624" y="32" width="96" height="15.983">
+   <properties>
+    <property name="island_id" type="int" value="4"/>
+   </properties>
+  </object>
+  <object id="41" type="Nav" x="560" y="64" width="32" height="32">
+   <properties>
+    <property name="island_id" type="int" value="4"/>
+   </properties>
+  </object>
+  <object id="42" type="Nav" x="576" y="96" width="16" height="32">
+   <properties>
+    <property name="island_id" type="int" value="4"/>
+   </properties>
+  </object>
+  <object id="43" type="Nav" x="624" y="192" width="16" height="64">
+   <properties>
+    <property name="island_id" type="int" value="3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#fffb00" id="10" name="NPC"/>
 </map>

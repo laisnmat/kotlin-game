@@ -11,7 +11,13 @@ class PlayerController() {
     private lateinit var playerEntity: PlayerEntity
 
     fun initController(){
-        playerEntity = FXGL.getGameWorld().getEntitiesByType(EntityType.PLAYER).first() as PlayerEntity
+        val entity = FXGL.getGameWorld().getSingleton(EntityType.PLAYER)
+        if (entity is PlayerEntity) {
+            playerEntity = entity
+        }
+        else {
+            throw IllegalStateException("Expected an entity of type PlayerEntity but got: ${entity.javaClass.name}")
+        }
     }
 
     fun configureInput(){
@@ -19,25 +25,25 @@ class PlayerController() {
             override fun onAction() {
                 playerEntity.moveRight()
             }
-        }, KeyCode.D)
+        }, KeyCode.RIGHT)
 
         getInput().addAction(object : UserAction("Move Left") {
             override fun onAction() {
                 playerEntity.moveLeft()
             }
-        }, KeyCode.Q)
+        }, KeyCode.LEFT)
 
         getInput().addAction(object : UserAction("Move Up") {
             override fun onAction() {
                 playerEntity.moveUp()
             }
-        }, KeyCode.Z)
+        }, KeyCode.UP)
 
         getInput().addAction(object : UserAction("Move Down") {
             override fun onAction() {
                 playerEntity.moveDown()
             }
-        }, KeyCode.S)
+        }, KeyCode.DOWN)
 
     }
 

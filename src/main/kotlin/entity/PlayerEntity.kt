@@ -1,44 +1,42 @@
 package com.ensimag.entity
 
+import com.almasb.fxgl.dsl.getGameWorld
+import com.almasb.fxgl.dsl.onCollision
 import com.almasb.fxgl.entity.Entity
+import com.almasb.fxgl.pathfinding.astar.AStarCell
+import com.almasb.fxgl.physics.PhysicsComponent
 import com.ensimag.Config
 import com.ensimag.Vars
 import com.ensimag.component.PlayerComponent
+import com.ensimag.logInfo
+import javafx.geometry.Point2D
+import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent
+import com.almasb.fxgl.pathfinding.astar.AStarGrid
+import com.ensimag.EntityType
 
 class PlayerEntity : Entity(){
+    private lateinit var astar: AStarMoveComponent
 
-    val playerComponent: PlayerComponent
+
+    private val playerComponent: PlayerComponent
         get() = getComponent(PlayerComponent::class.java)
 
-    val hp get() = playerComponent.hp
-
-    val isDie: Boolean
-        get() = playerComponent.isDie
-
-    fun move(x: Double, y: Double) {
-        playerComponent.move(x, y)
-    }
 
     fun moveRight() {
-        move(Vars.PLAYER_SPEED, 0.0)
+        playerComponent.right()
+
     }
 
     fun moveLeft() {
-        move(-Vars.PLAYER_SPEED, 0.0)
+        playerComponent.left()
     }
 
     fun moveUp() {
-        move(0.0, -Vars.PLAYER_SPEED)
+        playerComponent.up()
     }
 
     fun moveDown() {
-        move(0.0, Vars.PLAYER_SPEED)
+        playerComponent.down()
     }
 
-    /*val cellX: Int
-        get() = getComponent(CellMoveComponent::class.java).cellX
-
-    val cellY: Int
-        get() = getComponent(CellMoveComponent::class.java).cellY
-    */
 }

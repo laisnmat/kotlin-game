@@ -8,6 +8,177 @@
     ],
     "fileStates": {
         "": {
+            "scaleInDock": 1.5106,
+            "scaleInEditor": 6.1868
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/dev_world.tmx": {
+            "scale": 0.2143,
+            "selectedLayer": 7,
+            "viewCenter": {
+                "x": 639.2907139524032,
+                "y": 641.6238917405506
+            }
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/dev_world.tmx#animated_tree": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/dev_world.tmx#mountain_landscape": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/dev_world.tmx#nature": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/dev_world.tmx#teleport_128": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/large_test_map.tmx": {
+            "scale": 0.1005859375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2654.446601941747,
+                "y": 3941.902912621359
+            }
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/large_test_map.tmx#mountain_landscape": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/large_test_map.tmx#nature": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/large_test_map.tmx#teleport_128": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/sans titre.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 842,
+                "y": 471.5
+            }
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/template_do_not_edit.tmx": {
+            "scale": 0.6115625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 639.3459376596832,
+                "y": 638.5283597342872
+            }
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/template_do_not_edit.tmx#animated_tree": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/template_do_not_edit.tmx#fence_barbed": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/template_do_not_edit.tmx#houses": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/template_do_not_edit.tmx#misc_decor": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/template_do_not_edit.tmx#mountain_landscape": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/template_do_not_edit.tmx#nature": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/template_do_not_edit.tmx#teleport_128": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/template_do_not_edit.tmx#tileset-world": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map.tmx": {
+            "expandedObjectLayers": [
+                7
+            ],
+            "scale": 1.8491,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 153.04742847871938,
+                "y": 335.0278513871613
+            }
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map.tmx#OverlayFlowers": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map.tmx#RandomTiles": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map.tmx#animated_tree": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map.tmx#fence_barbed": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map.tmx#houses": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map.tmx#misc_decor": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map.tmx#mountain_landscape": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map.tmx#nature": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map.tmx#teleport_128": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map.tmx#tileset-world": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map2.tmx": {
+            "scale": 0.16308333333333333,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 214.61420541645384,
+                "y": 1450.1788451711802
+            }
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map2.tmx#mountain_landscape": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map2.tmx#nature": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map2.tmx#teleport_128": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/tutorial.tmx": {
+            "scale": 0.6115625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 639.3459376596832,
+                "y": 638.528359734287
+            }
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/tutorial.tmx#animated_tree": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/tutorial.tmx#fence_barbed": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/tutorial.tmx#houses": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/tutorial.tmx#misc_decor": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/tutorial.tmx#mountain_landscape": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/tutorial.tmx#nature": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/tutorial.tmx#teleport_128": {
+            "scaleInDock": 1
+        },
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/tutorial.tmx#tileset-world": {
             "scaleInDock": 1
         },
         "grass_island..tmx": {
@@ -19,11 +190,14 @@
             }
         },
         "grass_island.tmx": {
-            "scale": 0.6110677083333332,
-            "selectedLayer": 0,
+            "expandedObjectLayers": [
+                17
+            ],
+            "scale": 0.4159,
+            "selectedLayer": 7,
             "viewCenter": {
-                "x": 639.8636266780311,
-                "y": 767.5090560409121
+                "x": 764.6068766530416,
+                "y": 744.1692714594855
             }
         },
         "grass_island.tmx#tileset": {
@@ -31,14 +205,14 @@
         },
         "island_tileset.tsx": {
             "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInEditor": 5.5
         },
         "map.tmx": {
-            "scale": 0.9274374999999999,
-            "selectedLayer": 0,
+            "scale": 1.97,
+            "selectedLayer": 6,
             "viewCenter": {
-                "x": 800.0539119886785,
-                "y": 400.02695599433923
+                "x": 942.1319796954315,
+                "y": 335.27918781725884
             }
         },
         "map.tmx#tileset": {
@@ -47,9 +221,27 @@
         "tileset.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 4
+        },
+        "tmx/devmap.tmx": {
+            "expandedObjectLayers": [
+                10,
+                8
+            ],
+            "scale": 3.6091,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 118.58912194175832,
+                "y": 198.52594829735943
+            }
+        },
+        "tmx/devmap.tmx#objects": {
+            "scaleInDock": 1.5106
+        },
+        "tmx/devmap.tmx#overworld": {
+            "scaleInDock": 2.1632
         }
     },
-    "last.imagePath": "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/tp-acvl-kotlin/src/main/resources/assets/levels",
+    "last.imagePath": "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/tp-acvl-kotlin/src/main/resources/assets/levels/tmx",
     "map.height": 50,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
@@ -58,13 +250,22 @@
     "openFiles": [
     ],
     "project": "untitled.tiled-project",
+    "property.type": "int",
     "recentFiles": [
-        "island_tileset.tsx",
         "grass_island.tmx",
-        "grass_island..tmx",
+        "island_tileset.tsx",
+        "tmx/devmap.tmx",
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/sans titre.tmx",
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map2.tmx",
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/dev_world.tmx",
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map.tmx",
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/template_do_not_edit.tmx",
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/large_test_map.tmx",
         "map.tmx",
-        "tileset.tsx"
+        "tileset.tsx",
+        "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/tutorial.tmx"
     ],
+    "tileset.embedInMap": true,
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
         "height": 16,

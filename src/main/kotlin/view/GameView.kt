@@ -12,5 +12,6 @@ class GameView {
         FXGL.getGameScene().viewport.setBounds(0, 0, Vars.MAP_WIDTH, Vars.MAP_HEIGHT)
         FXGL.getGameScene().viewport.setZoom(Config.ZOOM)
 
+
     }
 }

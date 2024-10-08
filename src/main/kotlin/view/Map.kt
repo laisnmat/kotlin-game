@@ -11,6 +11,7 @@ class Map {
         Vars.MAP_WIDTH = level.width
         Vars.MAP_HEIGHT = level.height
 
+
     }
 
 }

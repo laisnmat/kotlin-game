@@ -28,6 +28,10 @@ class NPCAnimationComponenent(texture: Pets) : AnimationComponent() {
     }
 
     override fun onUpdate(tpf: Double) {
+        randomIdleAnimation()
+    }
+
+    fun randomIdleAnimation(){
         if((0..100).random() == 0){
 
             var randomIdle = (0..3).random()

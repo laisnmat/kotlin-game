@@ -13,8 +13,10 @@ import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent
 import com.almasb.fxgl.physics.BoundingShape
 import com.almasb.fxgl.physics.HitBox
 import com.ensimag.component.NPCAnimationComponenent
+import com.ensimag.component.NPCComponent
 import com.ensimag.component.PlayerAnimationComponent
 import com.ensimag.component.PlayerComponent
+import com.ensimag.entity.NPCEntity
 import com.ensimag.entity.PlayerEntity
 import com.ensimag.npc.Pets
 import javafx.geometry.Point2D
@@ -72,15 +74,17 @@ class ETCIFactory : EntityFactory{
     //TODO: draft
     @Spawns("Chicken")
     fun newChicken(data: SpawnData): Entity {
-        return entityBuilder()
-            .atAnchored(Point2D(Config.PETS_SPRITE_SIZE.toDouble()/2.0, Config.PETS_SPRITE_SIZE.toDouble()/2.0), Point2D(data.x, data.y))
-            .type(EntityType.CHICKEN)
-            .bbox(HitBox(BoundingShape.box(Pets.CHICKEN.spriteSize.toDouble(), Pets.CHICKEN.spriteSize.toDouble())))
-            .with(CellMoveComponent(Config.TILE_SIZE, Config.TILE_SIZE, Vars.PLAYER_SPEED))
-            .with(AStarMoveComponent(LazyValue { FXGL.getAppCast<ETCIApp>().getGrid() }))
-            .with(NPCAnimationComponenent(Pets.CHICKEN))
-            .scale(0.5, 0.5)
-            .collidable()
-            .build()
+        val chicken = NPCEntity()
+        chicken.setPosition(data.x, data.y)
+        chicken.localAnchor = Point2D(Config.PETS_SPRITE_SIZE.toDouble()/2.0, Config.PETS_SPRITE_SIZE.toDouble()/2.0)
+        chicken.type = EntityType.CHICKEN
+        chicken.boundingBoxComponent.addHitBox(HitBox(BoundingShape.box(Pets.CHICKEN.spriteSize.toDouble(), Pets.CHICKEN.spriteSize.toDouble())))
+        chicken.addComponent(CollidableComponent(true))
+        chicken.addComponent(CellMoveComponent(Config.TILE_SIZE, Config.TILE_SIZE, Vars.CHICKEN_SPEED))
+        chicken.addComponent(AStarMoveComponent(LazyValue{FXGL.getAppCast<ETCIApp>().getGrid()}))
+        chicken.addComponent(NPCAnimationComponenent(Pets.CHICKEN))
+        chicken.addComponent(NPCComponent())
+        chicken.setScaleUniform(0.5)
+        return chicken
     }
 }

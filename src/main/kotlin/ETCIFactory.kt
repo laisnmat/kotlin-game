@@ -76,7 +76,7 @@ class ETCIFactory : EntityFactory{
     fun newChicken(data: SpawnData): Entity {
         val chicken = NPCEntity()
         chicken.setPosition(data.x, data.y)
-        chicken.localAnchor = Point2D(Config.PETS_SPRITE_SIZE.toDouble()/2.0, Config.PETS_SPRITE_SIZE.toDouble()/2.0)
+        chicken.localAnchor = Point2D(Config.TILE_SIZE.toDouble()/2.0, Config.TILE_SIZE.toDouble()/2.0)
         chicken.type = EntityType.CHICKEN
         chicken.boundingBoxComponent.addHitBox(HitBox(BoundingShape.box(Pets.CHICKEN.spriteSize.toDouble(), Pets.CHICKEN.spriteSize.toDouble())))
         chicken.addComponent(CollidableComponent(true))

@@ -83,6 +83,11 @@ abstract class AnimationComponent : Component() {
         animatedTexture.loopNoOverride(channelWalkLeft)
     }
 
+    fun playDeath(onFinished: Runnable) {
+        //animatedTexture.playAnimationChannel(channelDeath)
+        animatedTexture.onCycleFinished = onFinished
+
+    }
 
 
 }

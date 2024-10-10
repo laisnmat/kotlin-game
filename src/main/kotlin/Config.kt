@@ -20,7 +20,6 @@ object Config{
     const val WIDTH = 800
     const val HEIGHT = 600
     const val ZOOM: Double = 3.0
-
 }
 
 object Vars{
@@ -28,10 +27,15 @@ object Vars{
     var MAP_WIDTH: Int = 0
     var PLAYER_SPEED: Double = 100.0
     var CHICKEN_SPEED: Double = 20.0
+    var PLAYER_MAX_HEALTH: Double = 10.0
+    var PLAYER_MAX_HUNGER: Double = 10.0
     var NPC_IDLE_TIME: Double = 5.0
     var NPC_RANDOM_IDLE_TIME: Double = 10.0
     var DISTANCE_RANDOM_WALK: Double = 4.0
-
+    var WIDTH_HEALTH_BAR: Double = 30.0
+    var HEIGHT_HEALTH_BAR: Double = 8.0
+    var TIME_HUNGER_DAMAGE: Double = 1.0
+    var TIME_HEALTH_DAMAGE: Double = 1.0
 }
 
 private val log = Logger.get("Main")

@@ -9,6 +9,7 @@ import com.almasb.fxgl.pathfinding.astar.AStarCell
 import com.almasb.fxgl.pathfinding.astar.AStarGrid
 import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent
 import com.ensimag.component.PlayerComponent
+import com.ensimag.events.EventHandlers
 import com.ensimag.gameplay.PlayerController
 import com.ensimag.view.GameView
 
@@ -21,6 +22,10 @@ class ETCIApp : GameApplication() {
 
     fun getGrid(): AStarGrid {
         return grid!!
+    }
+
+    override fun onPreInit() {
+        EventHandlers.initialize()
     }
 
     override fun initSettings(settings: GameSettings) {

@@ -1,16 +1,24 @@
 package com.ensimag.component
 
+import com.almasb.fxgl.dsl.components.HealthDoubleComponent
+import com.almasb.fxgl.dsl.fire
+import com.almasb.fxgl.dsl.showMessage
 import com.almasb.fxgl.entity.component.Component
 import com.almasb.fxgl.entity.component.Required
 import com.almasb.fxgl.pathfinding.CellMoveComponent
 import com.almasb.fxgl.pathfinding.astar.AStarCell
 import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent
+import com.ensimag.Vars
 import com.ensimag.component.PlayerComponent.MoveDirection.*
 import com.ensimag.entity.PlayerEntity
+import com.ensimag.events.OnDyingEvent
+import com.ensimag.events.OnHungryDamageEvent
+import com.ensimag.events.OnIncreasingHungerEvent
 
 
 @Required(AStarMoveComponent::class)
 class PlayerComponent : Component() {
+
     internal enum class MoveDirection {
         UP, RIGHT, DOWN, LEFT, NONE
     }
@@ -21,6 +29,20 @@ class PlayerComponent : Component() {
 
     private var currentMoveDir = NONE
     private var nextMoveDir = NONE
+
+    var hp = HealthDoubleComponent(Vars.PLAYER_MAX_HEALTH)
+    var hungerPoint = HungerDoubleComponent(Vars.PLAYER_MAX_HUNGER)
+    var time = 0.0
+    var isHungry = false
+        private set
+    var isDying = false
+        private set
+
+    override fun onUpdate(tpf: Double) {
+        movementAnimation()
+        healthTimer(tpf)
+        hungerTimer(tpf)
+    }
 
     fun up() {
         nextMoveDir = UP
@@ -38,7 +60,7 @@ class PlayerComponent : Component() {
         nextMoveDir = RIGHT
     }
 
-    override fun onUpdate(tpf: Double) {
+    fun movementAnimation(){
         val player = (this.getEntity() as PlayerEntity).getComponent(PlayerAnimationComponent::class.java)
         val x = moveComponent!!.cellX
         val y = moveComponent.cellY
@@ -123,7 +145,59 @@ class PlayerComponent : Component() {
             NONE -> {
             }
         }
+    }
 
+    fun healthTimer(tpf: Double){
+        if(isHungry){
+            time+=tpf
+            if(time>Vars.TIME_HEALTH_DAMAGE){
+                fire(OnHungryDamageEvent(entity as PlayerEntity))
+                time = 0.0
+            }
+        }
+        if(hp.isZero){
+            fire(OnDyingEvent(entity as PlayerEntity))
+        }
+    }
+
+    fun hungerTimer(tpf: Double){
+        if(!isHungry){
+            time+=tpf
+            if(time>Vars.TIME_HUNGER_DAMAGE){
+                fire(OnIncreasingHungerEvent(entity as PlayerEntity))
+                time = 0.0
+                if(hungerPoint.isZero){
+                    //fire(OnBeingHungryEvent(entity as PlayerEntity))
+                    isHungry = true
+                }
+            }
+        }
+    }
+
+    fun hungerBarDecrease(){
+        hungerPoint.damagePercentageMax(5.0)
+    }
+
+    fun hpDamage(){
+        hp.damagePercentageMax(20.0)
+    }
+
+    fun dying(){
+        val player = (this.getEntity() as PlayerEntity)
+        isDying = true
+        showMessage("You Lose...")
+        //player.animationComponent.playDeath(Runnable { player.removeFromWorld() })
+        /*TODO AJOUTER EVENEMENT DE MORT*/
+        isDying = false
+        isHungry = false
+        hungerPoint.restoreFully()
+        hp.restoreFully()
+    }
+
+    fun eating(){
+        hungerPoint.restorePercentageMax(5.0)
+        time = 0.0
+        isHungry = false
     }
 
     fun teleport() {

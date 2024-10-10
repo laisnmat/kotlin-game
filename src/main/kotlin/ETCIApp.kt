@@ -59,6 +59,7 @@ class ETCIApp : GameApplication() {
     }
 
     override fun onUpdate(tpf: Double) {
+        view.updateUI(tpf)
         val nbChicken = getWorldProperties().getInt("nbChicken")
         if (nbChicken == 0){
             showMessage("You won! Press ESC to exit")
@@ -87,11 +88,16 @@ class ETCIApp : GameApplication() {
             anim.buildAndPlay()
         }
 
+
     }
 
     override fun initGameVars(vars: MutableMap<String, Any>?) {
         super.initGameVars(vars)
         vars?.put("nbChicken", 0)
+    }
+
+    override fun initUI() {
+        view.initUI()
     }
 }
 

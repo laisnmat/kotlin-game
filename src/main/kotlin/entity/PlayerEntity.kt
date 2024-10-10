@@ -1,5 +1,6 @@
 package com.ensimag.entity
 
+import com.almasb.fxgl.dsl.components.HealthDoubleComponent
 import com.almasb.fxgl.dsl.getGameWorld
 import com.almasb.fxgl.dsl.onCollision
 import com.almasb.fxgl.entity.Entity
@@ -13,14 +14,24 @@ import javafx.geometry.Point2D
 import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent
 import com.almasb.fxgl.pathfinding.astar.AStarGrid
 import com.ensimag.EntityType
+import com.ensimag.component.AnimationComponent
+import com.ensimag.component.PlayerAnimationComponent
 
 class PlayerEntity : Entity(){
     private lateinit var astar: AStarMoveComponent
 
-
-    private val playerComponent: PlayerComponent
+    val playerComponent: PlayerComponent
         get() = getComponent(PlayerComponent::class.java)
 
+    val animationComponent: PlayerAnimationComponent
+        get() = getComponent(PlayerAnimationComponent::class.java)
+
+    val hp get() = playerComponent.hp
+    val hungerPoint get() = playerComponent.hungerPoint
+    val isHungry: Boolean
+        get() = playerComponent.isHungry
+    val isDying: Boolean
+        get() = playerComponent.isDying
 
     fun moveRight() {
         playerComponent.right()
@@ -38,5 +49,4 @@ class PlayerEntity : Entity(){
     fun moveDown() {
         playerComponent.down()
     }
-
 }

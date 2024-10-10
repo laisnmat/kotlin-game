@@ -12,10 +12,7 @@ import com.almasb.fxgl.pathfinding.CellMoveComponent
 import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent
 import com.almasb.fxgl.physics.BoundingShape
 import com.almasb.fxgl.physics.HitBox
-import com.ensimag.component.NPCAnimationComponenent
-import com.ensimag.component.NPCComponent
-import com.ensimag.component.PlayerAnimationComponent
-import com.ensimag.component.PlayerComponent
+import com.ensimag.component.*
 import com.ensimag.entity.NPCEntity
 import com.ensimag.entity.PlayerEntity
 import com.ensimag.npc.Pets
@@ -35,6 +32,7 @@ class ETCIFactory : EntityFactory{
         player.addComponent(AStarMoveComponent(LazyValue { FXGL.getAppCast<ETCIApp>().getGrid() }))
         player.addComponent(PlayerComponent())
         player.addComponent(PlayerAnimationComponent())
+        player.addComponent(PlayerChildViewComponent())
         player.type = EntityType.PLAYER
         return player
 

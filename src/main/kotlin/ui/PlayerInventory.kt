@@ -14,12 +14,12 @@ import kotlin.math.min
 class PlayerInventoryView : Parent() {
     // constants
     private val title = "Inventory"
-    private val WIDTH = 150.0
-    private val HEIGHT = 150.0
-    private val GAP = 3.0
+    private val WIDTH = 200.0
+    private val HEIGHT = 300.0
+    private val GAP = 5.0
     private val fontSize = 25.0
-    private val nbItemsPerLine = 2
-    private val nbLines = 2
+    private val nbItemsPerLine = 3
+    private val nbLines = 4
 
     // colors and sizes
     private val bgColor = "black"
@@ -40,8 +40,7 @@ class PlayerInventoryView : Parent() {
     private val itemSize = min(itemWidth, itemHeight)
     private var itemCenter = (WIDTH - (itemSize + GAP) * nbItemsPerLine - 2* GAP) / 2.0
 
-    var n = random(1, 1) * 10
-    var m = random(0, n)
+
     var time = 0.0
 
     init{
@@ -74,7 +73,8 @@ class PlayerInventoryView : Parent() {
                 item.strokeWidth = itemBorderWidth
                 item.x = itemCenter + GAP + i * (itemSize + GAP)
                 item.y = GAP + j * (itemSize + GAP) + fontSize*1.5
-
+                var n = random(1, 1) * 10
+                var m = random(0, n)
                 val text = Text("$m/$n")
                 text.x = item.x + GAP
                 text.y = item.y + itemSize - 5
@@ -84,6 +84,7 @@ class PlayerInventoryView : Parent() {
                 val colorGreen = Color.web("#00FF00")
                 val colorRed = Color.web("#FF0000")
                 item.fill = Color.web(itemColor)
+
 
                 if (m == n) {
                     text.fill = colorGreen
@@ -103,11 +104,7 @@ class PlayerInventoryView : Parent() {
 
 
     fun update(tpf: Double) {
-        time += tpf
-        if(time > 10){
 
-            m++
-        }
     }
 }
 

@@ -1,14 +1,20 @@
 package com.ensimag.component
 
+import com.almasb.fxgl.dsl.FXGL
 import com.almasb.fxgl.dsl.components.HealthDoubleComponent
 import com.almasb.fxgl.dsl.components.view.ChildViewComponent
+import com.almasb.fxgl.dsl.onEvent
 import com.almasb.fxgl.ui.Position
 import com.almasb.fxgl.ui.ProgressBar
 import com.ensimag.Config
 import com.ensimag.Vars
+import com.ensimag.entity.PlayerEntity
+import com.ensimag.events.Events
+import com.ensimag.events.OnDyingEvent
 import javafx.scene.Group
 import javafx.scene.paint.Color
 import javafx.scene.shape.StrokeType
+import javafx.util.Duration
 
 class PlayerChildViewComponent : ChildViewComponent(0.0, 30.0, isTransformApplied = true) {
 
@@ -32,7 +38,14 @@ class PlayerChildViewComponent : ChildViewComponent(0.0, 30.0, isTransformApplie
             setMinValue(0.0)
             maxValueProperty().bind(player.hp.maxValueProperty())
             currentValueProperty().bind(player.hp.valueProperty())
-            setFill(Color.RED)
+            setFill(Color.DARKGREEN)
+            onEvent(Events.ON_HUNGRY_DAMAGE) {
+                setFill(Color.RED)
+                FXGL.getGameTimer().runOnceAfter({ setFill(Color.DARKGREEN) }, Duration(1.0))
+            }
+            onEvent(Events.ON_HEALTH_VERY_LOW) {
+                setFill(Color.RED)
+            }
             setTraceFill(null)
             isLabelVisible = false
             innerBar.arcWidthProperty().unbind()
@@ -69,7 +82,7 @@ class PlayerChildViewComponent : ChildViewComponent(0.0, 30.0, isTransformApplie
             setMinValue(0.0)
             maxValueProperty().bind(player.hungerPoint.maxValueProperty())
             currentValueProperty().bind(player.hungerPoint.valueProperty())
-            setFill(Color.BROWN)
+            setFill(Color.DARKORANGE)
             setTraceFill(null)
             isLabelVisible = false
             innerBar.arcWidthProperty().unbind()

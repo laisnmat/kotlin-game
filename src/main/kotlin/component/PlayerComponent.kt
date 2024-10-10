@@ -12,6 +12,7 @@ import com.ensimag.Vars
 import com.ensimag.component.PlayerComponent.MoveDirection.*
 import com.ensimag.entity.PlayerEntity
 import com.ensimag.events.OnDyingEvent
+import com.ensimag.events.OnHealthVeryLowEvent
 import com.ensimag.events.OnHungryDamageEvent
 import com.ensimag.events.OnIncreasingHungerEvent
 
@@ -155,6 +156,9 @@ class PlayerComponent : Component() {
                 time = 0.0
             }
         }
+        if(hp.value <= 5){
+            fire(OnHealthVeryLowEvent(entity as PlayerEntity))
+        }
         if(hp.isZero){
             fire(OnDyingEvent(entity as PlayerEntity))
         }
@@ -195,7 +199,7 @@ class PlayerComponent : Component() {
     }
 
     fun eating(){
-        hungerPoint.restorePercentageMax(5.0)
+        hungerPoint.restorePercentageMax(25.0)
         time = 0.0
         isHungry = false
     }

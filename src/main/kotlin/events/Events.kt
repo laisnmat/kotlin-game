@@ -3,6 +3,7 @@ package com.ensimag.events
 import com.ensimag.entity.PlayerEntity
 import com.ensimag.events.Events.ON_DYING
 import com.ensimag.events.Events.ON_EATING
+import com.ensimag.events.Events.ON_HEALTH_VERY_LOW
 import com.ensimag.events.Events.ON_HUNGRY_DAMAGE
 import com.ensimag.events.Events.ON_INCREASING_HUNGER
 import javafx.event.Event
@@ -16,11 +17,16 @@ object Events {
     val ON_EATING = EventType<OnEatingEvent>("ON_EATING")
     //val ON_BEING_HUNGRY = EventType<OnBeingHungryEvent>("ON_BEING_HUNGRY")
     val ON_HUNGRY_DAMAGE = EventType<OnHungryDamageEvent>("ON_HUNGRY_DAMAGE")
+    val ON_HEALTH_VERY_LOW = EventType<OnHealthVeryLowEvent>("ON_HEALTH_VERY_LOW")
 }
 
 class OnDyingEvent(
     val dyingEntity: PlayerEntity
 ) : GameEvent(ON_DYING)
+
+class OnHealthVeryLowEvent(
+    val dyingEntity: PlayerEntity
+) : GameEvent(ON_HEALTH_VERY_LOW)
 
 class OnIncreasingHungerEvent(
     val hungryEntity: PlayerEntity

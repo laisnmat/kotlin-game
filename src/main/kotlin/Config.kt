@@ -35,7 +35,7 @@ object Vars{
     var WIDTH_HEALTH_BAR: Double = 30.0
     var HEIGHT_HEALTH_BAR: Double = 8.0
     var TIME_HUNGER_DAMAGE: Double = 1.0
-    var TIME_HEALTH_DAMAGE: Double = 1.0
+    var TIME_HEALTH_DAMAGE: Double = 3.0
 }
 
 private val log = Logger.get("Main")

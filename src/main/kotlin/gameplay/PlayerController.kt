@@ -7,8 +7,12 @@ import com.ensimag.component.PlayerAnimationComponent
 import com.ensimag.component.PlayerComponent
 import com.ensimag.component.TreeAnimationComponent
 import com.ensimag.entity.PlayerEntity
+import com.ensimag.entity.NPCEntity
+import com.ensimag.events.OnAttackEvent
 import com.ensimag.events.Events
+import com.ensimag.events.OnCuttingEvent
 import com.ensimag.events.OnEatingEvent
+import com.ensimag.items.ActionConfig
 import com.ensimag.items.Actions
 import com.ensimag.logInfo
 import javafx.scene.input.KeyCode
@@ -59,16 +63,20 @@ class PlayerController() {
         }, KeyCode.T)
 
         getInput().addAction(object : UserAction("Attack") {
-            override fun onAction() {
+            override fun onActionBegin() {
+                if (getWorldProperties().getValue<ActionConfig>("selectedItem").action == Actions.FOOD) {
+                    fire(OnEatingEvent(playerEntity))
+                    return@onActionBegin
+                }
 
                 var collidingEntity = getGameWorld().getCollidingEntities(playerEntity)
                 if (collidingEntity.isNotEmpty()) {
                     collidingEntity.forEach {
-                        if (it.type == EntityType.CHICKEN && getWorldProperties().getValue<Actions>("selectedItem") == Actions.SWORD) {
-                            it.removeFromWorld()
+                        if (it.type == EntityType.CHICKEN && getWorldProperties().getValue<ActionConfig>("selectedItem").action == Actions.SWORD) {
+                            fire(OnAttackEvent(playerEntity, it as NPCEntity))
                         }
-                        if (it.type == EntityType.TREE && getWorldProperties().getValue<Actions>("selectedItem") == Actions.AXE) {
-                            it.getComponent(TreeAnimationComponent::class.java).cut()
+                        if (it.type == EntityType.TREE && getWorldProperties().getValue<ActionConfig>("selectedItem").action == Actions.AXE) {
+                            fire(OnCuttingEvent(playerEntity, it))
                         }
                     }
                 }

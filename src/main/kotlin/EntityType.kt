@@ -8,5 +8,6 @@ enum class EntityType{
     ITEM,
     NAV,
     BRIDGE,
-    TREE
+    TREE,
+    TREASURE,
 }

@@ -19,6 +19,8 @@ import javafx.util.Duration
 class PlayerChildViewComponent : ChildViewComponent(0.0, 30.0, isTransformApplied = true) {
 
     private lateinit var player: PlayerComponent
+    private lateinit var hpBar: ProgressBar
+    private lateinit var hungerBar: ProgressBar
 
     override fun onAdded() {
         super.onAdded()
@@ -26,8 +28,8 @@ class PlayerChildViewComponent : ChildViewComponent(0.0, 30.0, isTransformApplie
     }
 
     private fun createView() {
-        var hpBar = createHPBar()
-        var hungerBar = createHungerBar()
+        hpBar = createHPBar()
+        hungerBar = createHungerBar()
         hungerBar.translateY = hpBar.translateY+2.6
         viewRoot.children += Group(hpBar, hungerBar)
     }
@@ -39,13 +41,13 @@ class PlayerChildViewComponent : ChildViewComponent(0.0, 30.0, isTransformApplie
             maxValueProperty().bind(player.hp.maxValueProperty())
             currentValueProperty().bind(player.hp.valueProperty())
             setFill(Color.DARKGREEN)
-            onEvent(Events.ON_HUNGRY_DAMAGE) {
+            /*onEvent(Events.ON_HUNGRY_DAMAGE) {
                 setFill(Color.RED)
                 FXGL.getGameTimer().runOnceAfter({ setFill(Color.DARKGREEN) }, Duration(1.0))
             }
             onEvent(Events.ON_HEALTH_VERY_LOW) {
                 setFill(Color.RED)
-            }
+            }*/
             setTraceFill(null)
             isLabelVisible = false
             innerBar.arcWidthProperty().unbind()
@@ -110,5 +112,14 @@ class PlayerChildViewComponent : ChildViewComponent(0.0, 30.0, isTransformApplie
             setHeight(Vars.HEIGHT_HEALTH_BAR)
         }
         return hungerBar
+    }
+
+    fun healthVeryLow(){
+        hpBar.setFill(Color.RED)
+        FXGL.getGameTimer().runOnceAfter({ hpBar.setFill(Color.DARKGREEN) }, Duration(1.0))
+    }
+
+    fun hpDamage(){
+        hpBar.setFill(Color.RED)
     }
 }

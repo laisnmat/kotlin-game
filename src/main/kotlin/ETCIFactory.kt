@@ -17,6 +17,7 @@ import com.ensimag.entity.NPCEntity
 import com.ensimag.entity.PlayerEntity
 import com.ensimag.npc.Pets
 import javafx.geometry.Point2D
+import javafx.scene.shape.Rectangle
 
 class ETCIFactory : EntityFactory{
 
@@ -95,9 +96,19 @@ class ETCIFactory : EntityFactory{
             .at(data.x, data.y)
             .type(EntityType.TREE)
             .with(TreeAnimationComponent())
-            .bbox(HitBox(BoundingShape.box(32.0, 32.0)))
+            .bbox(HitBox(BoundingShape.box(data.get("width"),data.get("height"))))
             .collidable()
-            .scaleOrigin(data.get<Double>("width")/32.0, data.get<Double>("height")/32.0)
+            .build()
+    }
+
+    @Spawns("Treasure")
+    fun newTreasure(data: SpawnData): Entity {
+        return entityBuilder()
+            .at(data.x, data.y)
+            .type(EntityType.TREASURE)
+            .view(Rectangle(data.get("width"), data.get("height")))
+            .bbox(HitBox(BoundingShape.box(data.get("width"),data.get("height"))))
+            .collidable()
             .build()
     }
 }

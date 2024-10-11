@@ -1,7 +1,10 @@
 package com.ensimag.events
 
 import com.ensimag.entity.PlayerEntity
+import com.almasb.fxgl.entity.Entity
+import com.ensimag.entity.NPCEntity
 import com.ensimag.events.Events.ON_ATTACK
+import com.ensimag.events.Events.ON_CUTTING
 import com.ensimag.events.Events.ON_DYING
 import com.ensimag.events.Events.ON_EATING
 import com.ensimag.events.Events.ON_HEALTH_VERY_LOW
@@ -21,6 +24,7 @@ object Events {
     //val ON_BEING_HUNGRY = EventType<OnBeingHungryEvent>("ON_BEING_HUNGRY")
     val ON_HUNGRY_DAMAGE = EventType<OnHungryDamageEvent>("ON_HUNGRY_DAMAGE")
     val ON_HEALTH_VERY_LOW = EventType<OnHealthVeryLowEvent>("ON_HEALTH_VERY_LOW")
+    val ON_CUTTING = EventType<OnCuttingEvent>("ON_CUTTING")
     //val ON_ITEM_USED = EventType<OnItemUsedEvent>("ON_ITEM_USED")
 }
 
@@ -29,7 +33,8 @@ class OnDyingEvent(
 ) : GameEvent(ON_DYING)
 
 class OnAttackEvent(
-    val attackEntity: PlayerEntity
+    val attackEntity: PlayerEntity,
+    val attackedEntity: NPCEntity
 ) : GameEvent(ON_ATTACK)
 
 class OnHealthVeryLowEvent(
@@ -51,6 +56,12 @@ class OnBeingHungryEvent(
 class OnHungryDamageEvent(
     val hungryEntity: PlayerEntity
 ) : GameEvent(ON_HUNGRY_DAMAGE)
+
+class OnCuttingEvent(
+    val cutterEntity: PlayerEntity,
+    val treeEntity: Entity
+) : GameEvent(ON_CUTTING)
+
 
 /*
 class OnItemUsedEvent(

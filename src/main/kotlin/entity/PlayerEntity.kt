@@ -8,14 +8,12 @@ import com.almasb.fxgl.pathfinding.astar.AStarCell
 import com.almasb.fxgl.physics.PhysicsComponent
 import com.ensimag.Config
 import com.ensimag.Vars
-import com.ensimag.component.PlayerComponent
 import com.ensimag.logInfo
 import javafx.geometry.Point2D
 import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent
 import com.almasb.fxgl.pathfinding.astar.AStarGrid
 import com.ensimag.EntityType
-import com.ensimag.component.AnimationComponent
-import com.ensimag.component.PlayerAnimationComponent
+import com.ensimag.component.*
 
 class PlayerEntity : Entity(){
     private lateinit var astar: AStarMoveComponent
@@ -25,6 +23,12 @@ class PlayerEntity : Entity(){
 
     val animationComponent: PlayerAnimationComponent
         get() = getComponent(PlayerAnimationComponent::class.java)
+
+    val actionsComponent: ActionsComponent
+        get() = getComponent(ActionsComponent::class.java)
+
+    val playerChildViewComponent: PlayerChildViewComponent
+        get() = getComponent(PlayerChildViewComponent::class.java)
 
     val hp get() = playerComponent.hp
     val hungerPoint get() = playerComponent.hungerPoint
@@ -48,5 +52,9 @@ class PlayerEntity : Entity(){
 
     fun moveDown() {
         playerComponent.down()
+    }
+
+    fun hasFood(): Boolean {
+        return actionsComponent.hasFood()
     }
 }

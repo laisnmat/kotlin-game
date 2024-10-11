@@ -5,6 +5,7 @@ import com.almasb.fxgl.dsl.fire
 import com.almasb.fxgl.dsl.showMessage
 import com.almasb.fxgl.entity.component.Component
 import com.almasb.fxgl.entity.component.Required
+import com.almasb.fxgl.entity.components.ObjectComponent
 import com.almasb.fxgl.pathfinding.CellMoveComponent
 import com.almasb.fxgl.pathfinding.astar.AStarCell
 import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent
@@ -15,6 +16,8 @@ import com.ensimag.events.OnDyingEvent
 import com.ensimag.events.OnHealthVeryLowEvent
 import com.ensimag.events.OnHungryDamageEvent
 import com.ensimag.events.OnIncreasingHungerEvent
+import com.ensimag.gameplay.Gameplay
+import com.ensimag.items.Actions
 
 
 @Required(AStarMoveComponent::class)
@@ -189,7 +192,7 @@ class PlayerComponent : Component() {
     fun dying(){
         val player = (this.getEntity() as PlayerEntity)
         isDying = true
-        showMessage("You Lose...")
+        Gameplay.showMessage("You Lose...")
         //player.animationComponent.playDeath(Runnable { player.removeFromWorld() })
         /*TODO AJOUTER EVENEMENT DE MORT*/
         isDying = false
@@ -202,6 +205,7 @@ class PlayerComponent : Component() {
         hungerPoint.restorePercentageMax(25.0)
         time = 0.0
         isHungry = false
+        (entity as PlayerEntity).actionsComponent.decreaseQuantity(Actions.FOOD)
     }
 
     fun teleport() {

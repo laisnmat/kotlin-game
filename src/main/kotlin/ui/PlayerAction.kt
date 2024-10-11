@@ -1,6 +1,9 @@
 package com.ensimag.ui
 
 import com.almasb.fxgl.dsl.FXGL
+import com.ensimag.EntityType
+import com.ensimag.component.ActionsComponent
+import com.ensimag.logInfo
 import javafx.scene.Parent
 import javafx.scene.paint.Color
 import javafx.scene.shape.Rectangle
@@ -8,6 +11,10 @@ import kotlin.math.min
 
 
 class PlayerActionView : Parent() {
+
+    val player = FXGL.getGameWorld().getSingleton(EntityType.PLAYER)
+    val actions = player.getComponent(ActionsComponent::class.java).getActions()
+
     // constants
     private val GAP = 1
     private val nbItem = 5
@@ -49,8 +56,31 @@ class PlayerActionView : Parent() {
                 item.stroke = Color.RED
                 item.strokeWidth = itemBorderWidth + 2
                 selectedItem = item
+                logInfo("${actions[i].name} selected")
             }
+
+            val itemImage = actions[i].image
+            itemImage.translateX = i * (itemSize + GAP) + GAP + itemSize*0.1
+            itemImage.translateY = itemSize*0.1
+            itemImage.fitHeight = 0.8 * itemSize
+            itemImage.fitWidth = 0.8 * itemSize
+
+
+            itemImage.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED) {
+                if (selectedItem != null) {
+                    selectedItem!!.fill = Color.web(itemColor)
+                    selectedItem!!.stroke = Color.web(itemBorderColor)
+                    selectedItem!!.strokeWidth = itemBorderWidth
+                }
+                item.stroke = Color.RED
+                item.strokeWidth = itemBorderWidth + 2
+                selectedItem = item
+                logInfo("${actions[i].name} selected")
+            }
+
             children.add(item)
+            children.add(itemImage)
+
         }
 
 

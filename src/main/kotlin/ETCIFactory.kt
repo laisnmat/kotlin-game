@@ -33,6 +33,8 @@ class ETCIFactory : EntityFactory{
         player.addComponent(PlayerComponent())
         player.addComponent(PlayerAnimationComponent())
         player.addComponent(PlayerChildViewComponent())
+        player.addComponent(InventoryComponent())
+        player.addComponent(ActionsComponent())
         player.type = EntityType.PLAYER
         return player
 

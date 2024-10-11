@@ -1,6 +1,10 @@
 package com.ensimag.ui
 
+import com.almasb.fxgl.dsl.FXGL
 import com.almasb.fxgl.dsl.random
+import com.ensimag.EntityType
+import com.ensimag.component.ActionsComponent
+import com.ensimag.component.InventoryComponent
 import com.ensimag.logInfo
 import javafx.scene.Parent
 import javafx.scene.paint.Color
@@ -12,14 +16,17 @@ import kotlin.math.min
 
 
 class PlayerInventoryView : Parent() {
+    val player = FXGL.getGameWorld().getSingleton(EntityType.PLAYER)
+    val inventory = player.getComponent(InventoryComponent::class.java).getInventory()
+
     // constants
     private val title = "Inventory"
-    private val WIDTH = 200.0
-    private val HEIGHT = 300.0
+    private val WIDTH = 250.0
+    private val HEIGHT = 200.0
     private val GAP = 5.0
     private val fontSize = 25.0
     private val nbItemsPerLine = 3
-    private val nbLines = 4
+    private val nbLines = 2
 
     // colors and sizes
     private val bgColor = "black"
@@ -66,6 +73,11 @@ class PlayerInventoryView : Parent() {
         var j = 0
         for (i in 0 until nbItemsPerLine) {
             for (j in 0 until nbLines) {
+                val currentItem = inventory.keys.elementAt(i + j * nbItemsPerLine)
+                val n = currentItem.goalValue
+                val m = inventory[currentItem]!!
+
+
                 val item = Rectangle(itemSize, itemSize)
                 item.arcWidth = 10.0
                 item.arcHeight = 10.0
@@ -73,8 +85,7 @@ class PlayerInventoryView : Parent() {
                 item.strokeWidth = itemBorderWidth
                 item.x = itemCenter + GAP + i * (itemSize + GAP)
                 item.y = GAP + j * (itemSize + GAP) + fontSize*1.5
-                var n = random(1, 1) * 10
-                var m = random(0, n)
+
                 val text = Text("$m/$n")
                 text.x = item.x + GAP
                 text.y = item.y + itemSize - 5
@@ -94,8 +105,26 @@ class PlayerInventoryView : Parent() {
                     item.stroke = colorRed
 
                 }
+
+                val itemImage = currentItem.image
+                itemImage.translateX = item.x + itemSize*0.1
+                itemImage.translateY = item.y + itemSize*0.1
+                itemImage.fitHeight = 0.8 * itemSize
+                itemImage.fitWidth = 0.8 * itemSize
+
+                itemImage.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED) {
+                    logInfo("${currentItem.name} selected")
+                }
+
+                item.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED) {
+                    logInfo("${currentItem.name} selected")
+                }
+
+
                 children.add(item)
+                children.add(itemImage)
                 children.add(text)
+
             }
         }
 

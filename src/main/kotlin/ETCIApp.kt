@@ -1,6 +1,7 @@
 package com.ensimag
 
 import com.almasb.fxgl.achievement.Achievement
+import com.almasb.fxgl.app.ApplicationMode
 import com.almasb.fxgl.app.GameApplication
 import com.almasb.fxgl.app.GameSettings
 import com.almasb.fxgl.dsl.*
@@ -43,13 +44,14 @@ class ETCIApp : GameApplication() {
             defaultLanguage = Language.FRENCH
             isDeveloperMenuEnabled = true
         }
+        settings.applicationMode = ApplicationMode.DEVELOPER
     }
 
     override fun initGame() {
         getGameWorld().addWorldListener(ETCIMap())
         getGameWorld().addEntityFactory(ETCIFactory())
         view.initView()
-
+        getEventBus().
         grid = AStarGrid.fromWorld(getGameWorld(), Vars.MAP_WIDTH/Config.TILE_SIZE, Vars.MAP_HEIGHT/Config.TILE_SIZE, Config.TILE_SIZE, Config.TILE_SIZE) { type ->
             if (type.equals(EntityType.NAV) || type.equals(EntityType.BRIDGE))
                 return@fromWorld CellState.WALKABLE

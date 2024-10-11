@@ -29,16 +29,17 @@ class ETCIApp : GameApplication() {
     override fun initSettings(settings: GameSettings) {
         settings.apply {
             width = Config.WIDTH
-            height = Config.HEIGHT
             title = Config.TITLE
             version = Config.VERSION
             defaultLanguage = Language.FRENCH
             isDeveloperMenuEnabled = true
         }
+        settings.setHeightFromRatio(16 / 9.0)
         settings.applicationMode = ApplicationMode.DEVELOPER
     }
 
     override fun initGame() {
+        getGameScene().viewport.isLazy = true
         getGameWorld().addWorldListener(ETCIMap())
         getGameWorld().addEntityFactory(ETCIFactory())
         view.initView()

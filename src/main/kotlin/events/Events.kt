@@ -1,6 +1,7 @@
 package com.ensimag.events
 
 import com.ensimag.entity.PlayerEntity
+import com.ensimag.entity.TreeEntity
 import com.almasb.fxgl.entity.Entity
 import com.ensimag.entity.NPCEntity
 import com.ensimag.events.Events.ON_ATTACK
@@ -10,6 +11,7 @@ import com.ensimag.events.Events.ON_EATING
 import com.ensimag.events.Events.ON_HEALTH_VERY_LOW
 import com.ensimag.events.Events.ON_HUNGRY_DAMAGE
 import com.ensimag.events.Events.ON_INCREASING_HUNGER
+import com.ensimag.events.Events.ON_OPENING_TREASURE
 import com.ensimag.items.Items
 import javafx.event.Event
 import javafx.event.EventType
@@ -25,6 +27,7 @@ object Events {
     val ON_HUNGRY_DAMAGE = EventType<OnHungryDamageEvent>("ON_HUNGRY_DAMAGE")
     val ON_HEALTH_VERY_LOW = EventType<OnHealthVeryLowEvent>("ON_HEALTH_VERY_LOW")
     val ON_CUTTING = EventType<OnCuttingEvent>("ON_CUTTING")
+    val ON_OPENING_TREASURE = EventType<OnOpeningTreasure>("ON_OPENING_TREASURE")
     //val ON_ITEM_USED = EventType<OnItemUsedEvent>("ON_ITEM_USED")
 }
 
@@ -59,8 +62,12 @@ class OnHungryDamageEvent(
 
 class OnCuttingEvent(
     val cutterEntity: PlayerEntity,
-    val treeEntity: Entity
+    val treeEntity: TreeEntity
 ) : GameEvent(ON_CUTTING)
+
+class OnOpeningTreasure(
+    val treasureEntity: Entity
+) : GameEvent(ON_OPENING_TREASURE)
 
 
 /*

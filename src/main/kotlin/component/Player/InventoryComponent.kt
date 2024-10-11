@@ -1,14 +1,12 @@
-package com.ensimag.component
+package com.ensimag.component.Player
 
 import com.almasb.fxgl.entity.component.Component
 import com.almasb.fxgl.inventory.Inventory
 import com.almasb.fxgl.inventory.ItemConfig
 import com.ensimag.items.Items
-import com.ensimag.logInfo
 import javafx.scene.Group
 import javafx.scene.paint.Color
 import javafx.scene.shape.Rectangle
-import javafx.scene.text.Font
 import javafx.scene.text.Text
 
 class InventoryComponent : Component() {

@@ -3,19 +3,18 @@ package com.ensimag.gameplay
 import com.almasb.fxgl.dsl.*
 import com.almasb.fxgl.input.UserAction
 import com.ensimag.EntityType
-import com.ensimag.component.PlayerAnimationComponent
-import com.ensimag.component.PlayerComponent
-import com.ensimag.component.TreeAnimationComponent
-import com.ensimag.entity.PlayerEntity
+import com.ensimag.component.Player.PlayerComponent
 import com.ensimag.entity.NPCEntity
+import com.ensimag.entity.PlayerEntity
+import com.ensimag.entity.TreeEntity
 import com.ensimag.events.OnAttackEvent
-import com.ensimag.events.Events
 import com.ensimag.events.OnCuttingEvent
 import com.ensimag.events.OnEatingEvent
 import com.ensimag.items.ActionConfig
 import com.ensimag.items.Actions
-import com.ensimag.logInfo
 import javafx.scene.input.KeyCode
+import javafx.scene.input.ScrollEvent
+
 
 class PlayerController() {
     private lateinit var playerEntity: PlayerEntity
@@ -76,14 +75,21 @@ class PlayerController() {
                             fire(OnAttackEvent(playerEntity, it as NPCEntity))
                         }
                         if (it.type == EntityType.TREE && getWorldProperties().getValue<ActionConfig>("selectedItem").action == Actions.AXE) {
-                            fire(OnCuttingEvent(playerEntity, it))
+                            fire(OnCuttingEvent(playerEntity, it as TreeEntity))
                         }
                     }
                 }
             }
         }, KeyCode.SPACE)
 
-
+        getInput().addEventHandler(ScrollEvent.SCROLL){ event ->
+            val actions = (getGameWorld().getSingleton(EntityType.PLAYER) as PlayerEntity).actionsComponent
+            if (event.getDeltaY() > 0) {
+                actions.previousAction()
+            } else if (event.getDeltaY() < 0) {
+                actions.nextAction()
+            }
+        }
     }
 
 }

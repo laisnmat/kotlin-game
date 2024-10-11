@@ -1,14 +1,12 @@
-package com.ensimag.component
+package com.ensimag.component.NPC
 
 import com.almasb.fxgl.dsl.random
 import com.almasb.fxgl.entity.component.Component
-import com.almasb.fxgl.event.Subscriber
 import com.almasb.fxgl.pathfinding.CellMoveComponent
 import com.almasb.fxgl.pathfinding.astar.AStarCell
 import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent
 import com.ensimag.Vars
 import com.ensimag.entity.NPCEntity
-import com.ensimag.entity.PlayerEntity
 
 class NPCComponent : Component() {
     private val astar: AStarMoveComponent?= null

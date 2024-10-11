@@ -32,18 +32,15 @@ object Gameplay {
 
     fun spawnPlayer(): Entity{
         val playerEntity = getGameWorld().spawn("player") as PlayerEntity
-        playerEntity.playerComponent.teleport()
+        playerEntity.teleport()
         playerController.initController()
-        FXGL.getGameScene().viewport.bindToEntity(player, getAppWidth() /2.0, getAppWidth() /2.0)
+        FXGL.getGameScene().viewport.bindToEntity(player, getAppWidth() /2.0, getAppHeight() /2.0)
         return playerEntity
     }
 
     fun spawnChickens(tpf: Double) {
         time += tpf
         val nbChicken = getWorldProperties().getInt("nbChicken")
-        if (nbChicken == 0){
-            win()
-        }
         if (!init ||(nbChicken < 10 && time > randomTime + (10-nbChicken) * 0.8)){
             time = 0.0
             randomTime = random(1.0, 10.0)

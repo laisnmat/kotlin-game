@@ -8,15 +8,18 @@
     ],
     "fileStates": {
         "": {
-            "scaleInDock": 1.5106,
+            "scaleInDock": 1,
             "scaleInEditor": 6.1868
         },
         "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/dev_world.tmx": {
+            "expandedObjectLayers": [
+                8
+            ],
             "scale": 0.2143,
             "selectedLayer": 7,
             "viewCenter": {
-                "x": 639.2907139524032,
-                "y": 641.6238917405506
+                "x": 636.957536164256,
+                "y": 641.6238917405503
             }
         },
         "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/dev_world.tmx#animated_tree": {
@@ -32,11 +35,11 @@
             "scaleInDock": 1
         },
         "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/large_test_map.tmx": {
-            "scale": 0.1005859375,
-            "selectedLayer": 0,
+            "scale": 1,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 2654.446601941747,
-                "y": 3941.902912621359
+                "x": 291.5,
+                "y": 751.5
             }
         },
         "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/large_test_map.tmx#mountain_landscape": {
@@ -61,7 +64,7 @@
             "scale": 0.6115625,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 639.3459376596832,
+                "x": 767.7056719468574,
                 "y": 638.5283597342872
             }
         },
@@ -94,11 +97,11 @@
             "expandedObjectLayers": [
                 7
             ],
-            "scale": 1.8491,
-            "selectedLayer": 3,
+            "scale": 0.799,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 153.04742847871938,
-                "y": 335.0278513871613
+                "x": 2400.500625782228,
+                "y": 2399.874843554443
             }
         },
         "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map.tmx#OverlayFlowers": {
@@ -132,11 +135,15 @@
             "scaleInDock": 1
         },
         "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map2.tmx": {
+            "expandedObjectLayers": [
+                7,
+                5
+            ],
             "scale": 0.16308333333333333,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 214.61420541645384,
-                "y": 1450.1788451711802
+                "x": 2397.5472662238117,
+                "y": 2400.6131834440466
             }
         },
         "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/test_map2.tmx#mountain_landscape": {
@@ -153,8 +160,8 @@
             "scale": 0.6115625,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 639.3459376596832,
-                "y": 638.528359734287
+                "x": 1435.6668369954011,
+                "y": 1227.1844660194174
             }
         },
         "/Users/Wendels/Documents/Ensimag/2aa Ensimag/ACVL/TP/Zephyria/src/main/resources/assets/levels/tmx/tutorial.tmx#animated_tree": {
@@ -196,8 +203,8 @@
             "scale": 0.4159,
             "selectedLayer": 7,
             "viewCenter": {
-                "x": 764.6068766530416,
-                "y": 744.1692714594855
+                "x": 639.5768213512864,
+                "y": 768.2135128636692
             }
         },
         "grass_island.tmx#tileset": {
@@ -222,16 +229,95 @@
             "scaleInDock": 1,
             "scaleInEditor": 4
         },
+        "tmx/MapFinal.tmx": {
+            "expandedObjectLayers": [
+                13,
+                8,
+                15
+            ],
+            "scale": 4,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 1053.375,
+                "y": 1032.125
+            }
+        },
+        "tmx/MapFinal.tmx#Artis_dock": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#Chest": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#ClassicItem": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#Inner": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#NPC_test": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#Overworld": {
+            "scaleInDock": 3.5044
+        },
+        "tmx/MapFinal.tmx#ScareCrow": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#Snow": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#TilesA2": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#TilesA3": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#TilesB": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#cave": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#chests": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#floss-idle-with-sail-blue": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#flower": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#ice tileset": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#mini-fishers-hut": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#objects": {
+            "scaleInDock": 3
+        },
+        "tmx/MapFinal.tmx#plant repack": {
+            "scaleInDock": 4
+        },
+        "tmx/MapFinal.tmx#shipwreck1": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#terrain2": {
+            "scaleInDock": 1
+        },
+        "tmx/MapFinal.tmx#tileset": {
+            "scaleInDock": 1
+        },
         "tmx/devmap.tmx": {
             "expandedObjectLayers": [
-                10,
-                8
+                7,
+                10
             ],
-            "scale": 3.6091,
+            "scale": 2.937,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 118.58912194175832,
-                "y": 198.52594829735943
+                "x": 194.92679605039157,
+                "y": 205.14130064691864
             }
         },
         "tmx/devmap.tmx#objects": {

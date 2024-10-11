@@ -1,10 +1,10 @@
-package com.ensimag.component
+package com.ensimag.component.NPC
 
 import com.almasb.fxgl.dsl.image
-import com.almasb.fxgl.dsl.random
 import com.almasb.fxgl.texture.AnimatedTexture
 import com.almasb.fxgl.texture.AnimationChannel
 import com.ensimag.Config
+import com.ensimag.component.AnimationComponent
 import com.ensimag.npc.Pets
 
 class NPCAnimationComponenent(texture: Pets) : AnimationComponent() {

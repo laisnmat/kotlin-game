@@ -1,4 +1,4 @@
-package com.ensimag.component
+package com.ensimag.component.Player
 
 import com.almasb.fxgl.dsl.components.RechargeableDoubleComponent
 

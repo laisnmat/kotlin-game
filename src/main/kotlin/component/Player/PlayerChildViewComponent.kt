@@ -1,19 +1,12 @@
-package com.ensimag.component
+package com.ensimag.component.Player
 
 import com.almasb.fxgl.dsl.FXGL
-import com.almasb.fxgl.dsl.components.HealthDoubleComponent
 import com.almasb.fxgl.dsl.components.view.ChildViewComponent
-import com.almasb.fxgl.dsl.onEvent
-import com.almasb.fxgl.ui.Position
 import com.almasb.fxgl.ui.ProgressBar
 import com.ensimag.Config
 import com.ensimag.Vars
-import com.ensimag.entity.PlayerEntity
-import com.ensimag.events.Events
-import com.ensimag.events.OnDyingEvent
 import javafx.scene.Group
 import javafx.scene.paint.Color
-import javafx.scene.shape.StrokeType
 import javafx.util.Duration
 
 class PlayerChildViewComponent : ChildViewComponent(0.0, 30.0, isTransformApplied = true) {

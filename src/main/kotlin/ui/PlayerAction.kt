@@ -2,12 +2,10 @@ package com.ensimag.ui
 
 import com.almasb.fxgl.dsl.FXGL
 import com.ensimag.EntityType
-import com.ensimag.component.ActionsComponent
 import com.ensimag.entity.PlayerEntity
 import javafx.geometry.Point2D
 import javafx.scene.Parent
 import javafx.scene.paint.Color
-import javafx.scene.shape.Rectangle
 
 import kotlin.math.min
 
@@ -18,7 +16,7 @@ class PlayerActionView : Parent() {
     // constants
     private val GAP = 1
     private val nbItem = actions.size
-    private val HEIGHT = 50.0
+    private val HEIGHT = 100.0
     private val WIDTH = nbItem * HEIGHT + (nbItem + 1) * GAP
 
     // colors and sizes

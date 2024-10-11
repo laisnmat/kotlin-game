@@ -1,8 +1,6 @@
 package com.ensimag.events
 
-import com.almasb.fxgl.dsl.getEventBus
 import com.almasb.fxgl.dsl.onEvent
-import com.ensimag.component.TreeAnimationComponent
 import com.ensimag.gameplay.Gameplay
 import com.ensimag.items.Actions
 
@@ -49,7 +47,10 @@ object EventHandlers {
         onEvent(Events.ON_CUTTING){
             val playerEntity = it.cutterEntity
             val treeEntity = it.treeEntity
-            treeEntity.getComponent(TreeAnimationComponent::class.java).cut()
+            treeEntity.treeComponent.cut()
+        }
+        onEvent(Events.ON_OPENING_TREASURE){
+
         }
     }
 

@@ -1,9 +1,8 @@
-package com.ensimag.component
+package com.ensimag.component.Player
 
 import com.almasb.fxgl.entity.component.Component
 import com.ensimag.items.ActionConfig
 import com.ensimag.items.Actions
-import com.ensimag.items.Items
 
 class ActionsComponent : Component() {
     private val actions = mutableListOf<ActionConfig>()
@@ -47,6 +46,24 @@ class ActionsComponent : Component() {
 
     fun hasFood(): Boolean {
         return (actions.find { it.action == Actions.FOOD }?.quantity ?: 0) > 0
+    }
+
+    fun nextAction() {
+        var index = actions.indexOfFirst { it.isSelected }
+        actions[index].unSelect()
+        while (actions[(index + 1) % actions.size].isDisabled) {
+            index++
+        }
+        actions[(index + 1) % actions.size].select()
+    }
+
+    fun previousAction() {
+        var index = actions.indexOfFirst { it.isSelected }
+        actions[index].unSelect()
+        while (actions[(index - 1 + actions.size) % actions.size].isDisabled) {
+            index--
+        }
+        actions[(index - 1 + actions.size) % actions.size].select()
     }
 
 

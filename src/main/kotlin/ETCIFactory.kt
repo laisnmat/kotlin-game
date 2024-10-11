@@ -12,9 +12,14 @@ import com.almasb.fxgl.pathfinding.CellMoveComponent
 import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent
 import com.almasb.fxgl.physics.BoundingShape
 import com.almasb.fxgl.physics.HitBox
-import com.ensimag.component.*
+import com.ensimag.component.NPC.NPCAnimationComponenent
+import com.ensimag.component.NPC.NPCComponent
+import com.ensimag.component.Player.*
+import com.ensimag.component.Tree.TreeAnimationComponent
+import com.ensimag.component.Tree.TreeComponent
 import com.ensimag.entity.NPCEntity
 import com.ensimag.entity.PlayerEntity
+import com.ensimag.entity.TreeEntity
 import com.ensimag.npc.Pets
 import javafx.geometry.Point2D
 import javafx.scene.shape.Rectangle
@@ -92,17 +97,29 @@ class ETCIFactory : EntityFactory{
 
     @Spawns("Tree")
     fun newTree(data: SpawnData): Entity {
+        val tree = TreeEntity()
+        tree.setPosition(data.x, data.y)
+        tree.type = EntityType.TREE
+        tree.boundingBoxComponent.addHitBox(HitBox(BoundingShape.box(data.get("width"),data.get("height"))))
+        tree.addComponent(CollidableComponent(true))
+        tree.addComponent(TreeAnimationComponent())
+        tree.addComponent(TreeComponent())
+        return tree
+    }
+
+    @Spawns("Treasure")
+    fun newTreasure(data: SpawnData): Entity {
         return entityBuilder()
             .at(data.x, data.y)
-            .type(EntityType.TREE)
-            .with(TreeAnimationComponent())
+            .type(EntityType.TREASURE)
+            .view(Rectangle(data.get("width"), data.get("height")))
             .bbox(HitBox(BoundingShape.box(data.get("width"),data.get("height"))))
             .collidable()
             .build()
     }
 
-    @Spawns("Treasure")
-    fun newTreasure(data: SpawnData): Entity {
+    @Spawns("Boat")
+    fun newBoat(data: SpawnData): Entity {
         return entityBuilder()
             .at(data.x, data.y)
             .type(EntityType.TREASURE)

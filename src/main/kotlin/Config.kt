@@ -15,10 +15,10 @@ object Config{
     const val VERSION = "1.0"
     const val TILE_SIZE = 16
     private const val MAP_FOLDER = "tmx"
-    private const val DEV_MAP = "mapFinal.tmx"
+    private const val DEV_MAP = "MapFinal.tmx"
     const val MAP = "$MAP_FOLDER/$DEV_MAP"
-    const val WIDTH = 800
-    const val HEIGHT = 600
+    const val WIDTH = 1800
+    const val HEIGHT = 1000
     const val ZOOM: Double = 3.0
 }
 
@@ -34,7 +34,7 @@ object Vars{
     var DISTANCE_RANDOM_WALK: Double = 4.0
     var WIDTH_HEALTH_BAR: Double = 30.0
     var HEIGHT_HEALTH_BAR: Double = 8.0
-    var TIME_HUNGER_DAMAGE: Double = 1.0
+    var TIME_HUNGER_INCREASE: Double = 8.0
     var TIME_HEALTH_DAMAGE: Double = 3.0
 }
 

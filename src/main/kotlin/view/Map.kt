@@ -15,11 +15,16 @@ class Map {
         Vars.MAP_HEIGHT = level.height
 
         getGameWorld().getEntitiesFiltered(Predicate { it.isType("TiledMapLayer") })
-                //it.viewComponent.isVisible = false
             .filter { it.getObject<Layer>("layer").name == "AbovePlayer" }
             .forEach {
                 it.viewComponent.parent.isMouseTransparent = true
                 it.zIndex = 6000
+            }
+        getGameWorld().getEntitiesFiltered(Predicate { it.isType("TiledMapLayer") })
+            .filter { it.getObject<Layer>("layer").name == "OnAbove" }
+            .forEach {
+                it.viewComponent.parent.isMouseTransparent = true
+                it.zIndex = 6500
             }
 
 

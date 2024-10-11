@@ -1,16 +1,14 @@
-package com.ensimag.component
+package com.ensimag.component.Player
 
 import com.almasb.fxgl.dsl.components.HealthDoubleComponent
 import com.almasb.fxgl.dsl.fire
-import com.almasb.fxgl.dsl.showMessage
 import com.almasb.fxgl.entity.component.Component
 import com.almasb.fxgl.entity.component.Required
-import com.almasb.fxgl.entity.components.ObjectComponent
 import com.almasb.fxgl.pathfinding.CellMoveComponent
 import com.almasb.fxgl.pathfinding.astar.AStarCell
 import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent
 import com.ensimag.Vars
-import com.ensimag.component.PlayerComponent.MoveDirection.*
+import com.ensimag.component.Player.PlayerComponent.MoveDirection.*
 import com.ensimag.entity.PlayerEntity
 import com.ensimag.events.OnDyingEvent
 import com.ensimag.events.OnHealthVeryLowEvent
@@ -170,7 +168,7 @@ class PlayerComponent : Component() {
     fun hungerTimer(tpf: Double){
         if(!isHungry){
             time+=tpf
-            if(time>Vars.TIME_HUNGER_DAMAGE){
+            if(time>Vars.TIME_HUNGER_INCREASE){
                 fire(OnIncreasingHungerEvent(entity as PlayerEntity))
                 time = 0.0
                 if(hungerPoint.isZero){

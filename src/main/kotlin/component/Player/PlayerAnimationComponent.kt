@@ -1,9 +1,10 @@
-package com.ensimag.component
+package com.ensimag.component.Player
 
 import com.almasb.fxgl.dsl.image
 import com.almasb.fxgl.texture.AnimatedTexture
 import com.almasb.fxgl.texture.AnimationChannel
 import com.ensimag.Config
+import com.ensimag.component.AnimationComponent
 
 class PlayerAnimationComponent() : AnimationComponent(){
         private val image = image(Config.TEXTURE_CHARACTER)

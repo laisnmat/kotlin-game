@@ -1,21 +1,15 @@
 package com.ensimag.ui
 
 import com.almasb.fxgl.dsl.FXGL
-import com.almasb.fxgl.dsl.random
 import com.ensimag.EntityType
-import com.ensimag.component.ActionsComponent
-import com.ensimag.component.InventoryComponent
+import com.ensimag.component.Player.InventoryComponent
 import com.ensimag.logInfo
-import javafx.collections.ModifiableObservableListBase
-import javafx.collections.ObservableList
 import javafx.scene.Group
-import javafx.scene.Node
 import javafx.scene.Parent
 import javafx.scene.paint.Color
 import javafx.scene.shape.Rectangle
 import javafx.scene.text.Font
 import javafx.scene.text.Text
-import kotlin.math.log
 import kotlin.math.min
 
 
@@ -25,8 +19,8 @@ class PlayerInventoryView : Parent() {
 
     // constants
     private val title = "Inventory"
-    private val WIDTH = 250.0
-    private val HEIGHT = 200.0
+    private val WIDTH = 350.0
+    private val HEIGHT = 300
     private val GAP = 5.0
     private val fontSize = 25.0
     private val nbItemsPerLine = 3

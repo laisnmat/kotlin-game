@@ -39,6 +39,7 @@ object EventHandlers {
         onEvent(Events.ON_ATTACK){
             val playerEntity = it.attackEntity
             val npcEntity = it.attackedEntity
+            //TODO: Ajoute de la bouffe dans inventaire action + met à jour la vue
 
             if(playerEntity.actionsComponent.increaseQuantity(Actions.FOOD) == true){
                 Gameplay.removeFromWorld(npcEntity)

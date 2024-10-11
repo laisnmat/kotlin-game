@@ -30,6 +30,9 @@ class PlayerEntity : Entity(){
     val playerChildViewComponent: PlayerChildViewComponent
         get() = getComponent(PlayerChildViewComponent::class.java)
 
+    val inventoryComponent: InventoryComponent
+        get() = getComponent(InventoryComponent::class.java)
+
     val hp get() = playerComponent.hp
     val hungerPoint get() = playerComponent.hungerPoint
     val isHungry: Boolean

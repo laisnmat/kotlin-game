@@ -63,6 +63,8 @@ class ETCIApp : GameApplication() {
                 return@fromWorld CellState.NOT_WALKABLE
         }
 
+
+
         val player = spawn("player")
         player.getComponent(PlayerComponent::class.java).teleport()
 

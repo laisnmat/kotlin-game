@@ -35,6 +35,7 @@ class ETCIFactory : EntityFactory{
         player.addComponent(PlayerChildViewComponent())
         player.addComponent(InventoryComponent())
         player.addComponent(ActionsComponent())
+        player.zIndex = 100
         player.type = EntityType.PLAYER
         return player
 
@@ -88,7 +89,7 @@ class ETCIFactory : EntityFactory{
         return chicken
     }
 
-    @Spawns("tree")
+    @Spawns("Tree")
     fun newTree(data: SpawnData): Entity {
         return entityBuilder()
             .at(data.x, data.y)

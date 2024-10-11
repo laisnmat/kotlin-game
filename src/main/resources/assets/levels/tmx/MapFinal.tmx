@@ -1134,7 +1134,5 @@
   <object id="177" name="Tree" type="Tree" x="160" y="608" width="32" height="32"/>
   <object id="178" name="Tree" type="Tree" x="432" y="384" width="16" height="16"/>
  </objectgroup>
- <objectgroup color="#aa7942" id="15" name="Treasure">
-  <object id="183" type="ChestH" x="224" y="192" width="32" height="16"/>
- </objectgroup>
+ <objectgroup color="#aa7942" id="15" name="Treasure"/>
 </map>

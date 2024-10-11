@@ -2,7 +2,6 @@ package com.ensimag.items
 
 import com.almasb.fxgl.dsl.FXGL
 import com.almasb.fxgl.texture.Texture
-import javafx.scene.image.Image
 
 enum class Actions(val image: Texture, val description: String){
     HAND(
@@ -43,7 +42,7 @@ enum class Items(val image: Texture, val description: String, val goalValue: Int
     WOOD(
         FXGL.getAssetLoader().loadTexture("items/wood.png"),
         "Wood",
-        100
+        5
     ),
     NAIL(
         FXGL.getAssetLoader().loadTexture("items/nail.png"),

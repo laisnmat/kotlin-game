@@ -2,6 +2,7 @@ package com.ensimag.component
 
 import com.almasb.fxgl.dsl.random
 import com.almasb.fxgl.entity.component.Component
+import com.almasb.fxgl.event.Subscriber
 import com.almasb.fxgl.pathfinding.CellMoveComponent
 import com.almasb.fxgl.pathfinding.astar.AStarCell
 import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent
@@ -53,4 +54,6 @@ class NPCComponent : Component() {
             .getRandomCell { obj: AStarCell -> obj.isWalkable }
             .ifPresent { c: AStarCell -> astar.stopMovementAt(c.x, c.y) }
     }
+
+
 }

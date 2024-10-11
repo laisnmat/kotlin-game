@@ -1,56 +1,67 @@
 package com.ensimag.component
 
 import com.almasb.fxgl.entity.component.Component
+import com.almasb.fxgl.inventory.Inventory
+import com.almasb.fxgl.inventory.ItemConfig
 import com.ensimag.items.Items
+import com.ensimag.logInfo
+import javafx.scene.Group
+import javafx.scene.paint.Color
+import javafx.scene.shape.Rectangle
+import javafx.scene.text.Font
+import javafx.scene.text.Text
 
 class InventoryComponent : Component() {
-    private val inventory = HashMap<Items, Int>()
+    private val inventory = Inventory<Items>(100)
+    public val items = listOf(
+        Items.WOOD,
+        Items.NAIL,
+        Items.STRING,
+        Items.TOOLS,
+        Items.MAP,
+        Items.MANUAL
+    )
 
     init {
-        inventory[Items.WOOD] = 0
-        inventory[Items.NAIL] = 0
-        inventory[Items.STRING] = 0
-        inventory[Items.TOOLS] = 0
-        inventory[Items.MAP] = 0
-        inventory[Items.MANUAL] = 0
+        items.forEach { addItem(it) }
     }
 
-    fun addItem(item: Items, quantity: Int) {
-        if (inventory.containsKey(item)) {
-            inventory[item] = inventory[item]!! + quantity
-        } else {
-            inventory[item] = quantity
-        }
+    private fun addItem(item: Items) {
+        inventory.add(item, ItemConfig(
+            item.description,
+            item.description,
+            item.goalValue,
+        ), quantity = 1)
     }
 
-    fun removeItem(item: Items, quantity: Int) {
-        if (inventory.containsKey(item)) {
-            if (inventory[item]!! - quantity <= 0) {
-                inventory.remove(item)
+    fun removeItem(item: Items) {
+        inventory.remove(item)
+    }
+
+    fun getInventory(): Inventory<Items> {
+        return inventory
+    }
+
+    fun add(item: Items) {
+        inventory.add(item)
+        if(item == Items.WOOD) {
+            val m = inventory.getItemQuantity(Items.WOOD)
+            val n = inventory.getData(Items.WOOD).get().maxStackQuantity
+
+            val text = (inventory.getData(Items.WOOD).get().view as Group).children[2] as Text
+
+            text.text = "$m/$n"
+            val colorGreen = Color.web("#00FF00")
+            val colorRed = Color.web("#FF0000")
+            if (m >= n) {
+                text.fill = colorGreen
+                ((inventory.getData(Items.WOOD).get().view as Group).children[0] as Rectangle).stroke = colorGreen
             } else {
-                inventory[item] = inventory[item]!! - quantity
+                text.fill = colorRed
+                ((inventory.getData(Items.WOOD).get().view as Group).children[0] as Rectangle).stroke = colorRed
             }
         }
     }
 
-    fun getQuantity(item: Items): Int {
-        return inventory[item] ?: 0
-    }
-
-    fun getExpectedQuantity(item: Items): Int {
-        return item.goalValue
-    }
-
-    fun isItemComplete(item: Items): Boolean {
-        return getQuantity(item) >= getExpectedQuantity(item)
-    }
-
-    fun getInventory(): Map<Items, Int> {
-        return inventory
-    }
-
-    fun clearInventory() {
-        inventory.clear()
-    }
-
 }
+

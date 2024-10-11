@@ -18,10 +18,6 @@ class ETCIMap : EntityWorldListener{
                 getWorldProperties().increment("nbChicken", 1)
                 logInfo("Chicken added. NbChicken = ${getWorldProperties().getInt("nbChicken")}")
             }
-            if (entity.type.equals(EntityType.NAV)){
-                    logInfo("Island ${entity.properties.getInt("island_id")} added.")
-
-            }
         }
     }
 

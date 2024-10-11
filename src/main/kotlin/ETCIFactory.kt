@@ -55,10 +55,10 @@ class ETCIFactory : EntityFactory{
             .at(data.x, data.y)
             .type(EntityType.NAV)
             .bbox(HitBox(BoundingShape.box(data.get("width"),data.get("height"))))
-            .with("island_id", data.get("island_id"))
             .collidable()
             .build()
     }
+
 
     @Spawns("Bridge")
     fun newBridge(data: SpawnData): Entity {
@@ -86,5 +86,17 @@ class ETCIFactory : EntityFactory{
         chicken.addComponent(NPCComponent())
         chicken.setScaleUniform(0.5)
         return chicken
+    }
+
+    @Spawns("tree")
+    fun newTree(data: SpawnData): Entity {
+        return entityBuilder()
+            .at(data.x, data.y)
+            .type(EntityType.TREE)
+            .with(TreeAnimationComponent())
+            .bbox(HitBox(BoundingShape.box(32.0, 32.0)))
+            .collidable()
+            .scaleOrigin(data.get<Double>("width")/32.0, data.get<Double>("height")/32.0)
+            .build()
     }
 }

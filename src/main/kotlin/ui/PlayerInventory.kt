@@ -6,6 +6,10 @@ import com.ensimag.EntityType
 import com.ensimag.component.ActionsComponent
 import com.ensimag.component.InventoryComponent
 import com.ensimag.logInfo
+import javafx.collections.ModifiableObservableListBase
+import javafx.collections.ObservableList
+import javafx.scene.Group
+import javafx.scene.Node
 import javafx.scene.Parent
 import javafx.scene.paint.Color
 import javafx.scene.shape.Rectangle
@@ -17,7 +21,7 @@ import kotlin.math.min
 
 class PlayerInventoryView : Parent() {
     val player = FXGL.getGameWorld().getSingleton(EntityType.PLAYER)
-    val inventory = player.getComponent(InventoryComponent::class.java).getInventory()
+    val inventory = player.getComponent(InventoryComponent::class.java)
 
     // constants
     private val title = "Inventory"
@@ -73,9 +77,15 @@ class PlayerInventoryView : Parent() {
         var j = 0
         for (i in 0 until nbItemsPerLine) {
             for (j in 0 until nbLines) {
-                val currentItem = inventory.keys.elementAt(i + j * nbItemsPerLine)
-                val n = currentItem.goalValue
-                val m = inventory[currentItem]!!
+                val currentItem = inventory.items[i + j * nbItemsPerLine]
+                val m = inventory.getInventory().getItemQuantity(currentItem)
+                if(inventory.getInventory().hasItem(currentItem)){
+                    logInfo("Item ${currentItem.name} is in the inventory")
+                }
+                else{
+                    logInfo("Item ${currentItem.name} is not in the inventory")
+                }
+                val n = inventory.getInventory().getData(currentItem).get().maxStackQuantity
 
 
                 val item = Rectangle(itemSize, itemSize)
@@ -112,18 +122,21 @@ class PlayerInventoryView : Parent() {
                 itemImage.fitHeight = 0.8 * itemSize
                 itemImage.fitWidth = 0.8 * itemSize
 
-                itemImage.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED) {
+
+
+                val node : Group = Group()
+                node.children.add(item)
+                node.children.add(itemImage)
+                node.children.add(text)
+
+
+                node.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED) {
                     logInfo("${currentItem.name} selected")
                 }
 
-                item.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED) {
-                    logInfo("${currentItem.name} selected")
-                }
+                inventory.getInventory().getData(currentItem).get().view = node
 
-
-                children.add(item)
-                children.add(itemImage)
-                children.add(text)
+                children.addAll(node)
 
             }
         }

@@ -7,5 +7,6 @@ enum class EntityType{
     CHICKEN,
     ITEM,
     NAV,
-    BRIDGE
+    BRIDGE,
+    TREE
 }

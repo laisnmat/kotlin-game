@@ -1,10 +1,16 @@
 package com.ensimag.gameplay
 
-import com.almasb.fxgl.dsl.FXGL
-import com.almasb.fxgl.dsl.getInput
+import com.almasb.fxgl.dsl.*
 import com.almasb.fxgl.input.UserAction
 import com.ensimag.EntityType
+import com.ensimag.component.PlayerAnimationComponent
+import com.ensimag.component.PlayerComponent
+import com.ensimag.component.TreeAnimationComponent
 import com.ensimag.entity.PlayerEntity
+import com.ensimag.events.Events
+import com.ensimag.events.OnEatingEvent
+import com.ensimag.items.Actions
+import com.ensimag.logInfo
 import javafx.scene.input.KeyCode
 
 class PlayerController() {
@@ -44,6 +50,31 @@ class PlayerController() {
                 playerEntity.moveDown()
             }
         }, KeyCode.DOWN)
+
+        getInput().addAction(object : UserAction("Teleport") {
+            override fun onAction() {
+                playerEntity.getComponent(PlayerComponent::class.java).teleport()
+
+            }
+        }, KeyCode.T)
+
+        getInput().addAction(object : UserAction("Attack") {
+            override fun onAction() {
+
+                var collidingEntity = getGameWorld().getCollidingEntities(playerEntity)
+                if (collidingEntity.isNotEmpty()) {
+                    collidingEntity.forEach {
+                        if (it.type == EntityType.CHICKEN && getWorldProperties().getValue<Actions>("selectedItem") == Actions.SWORD) {
+                            it.removeFromWorld()
+                        }
+                        if (it.type == EntityType.TREE && getWorldProperties().getValue<Actions>("selectedItem") == Actions.AXE) {
+                            it.getComponent(TreeAnimationComponent::class.java).cut()
+                        }
+                    }
+                }
+            }
+        }, KeyCode.SPACE)
+
 
     }
 

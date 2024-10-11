@@ -1,11 +1,12 @@
 package com.ensimag.events
 
+import com.almasb.fxgl.dsl.getEventBus
 import com.almasb.fxgl.dsl.onEvent
 
 object EventHandlers {
 
     fun initialize(){
-        onEvent(Events.ON_DYING){
+        getEventBus().addEventHandler(Events.ON_DYING){
             val playerEntity = it.dyingEntity
             playerEntity.playerComponent.dying()
         }

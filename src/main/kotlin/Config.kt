@@ -15,7 +15,7 @@ object Config{
     const val VERSION = "1.0"
     const val TILE_SIZE = 16
     private const val MAP_FOLDER = "tmx"
-    private const val DEV_MAP = "devmap.tmx"
+    private const val DEV_MAP = "mapFinal.tmx"
     const val MAP = "$MAP_FOLDER/$DEV_MAP"
     const val WIDTH = 800
     const val HEIGHT = 600

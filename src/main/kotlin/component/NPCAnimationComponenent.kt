@@ -25,6 +25,7 @@ class NPCAnimationComponenent(texture: Pets) : AnimationComponent() {
 
     init {
         animatedTexture.loop()
+        animatedTexture.play()
     }
 
     override fun onUpdate(tpf: Double) {

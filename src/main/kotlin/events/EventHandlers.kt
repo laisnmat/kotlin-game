@@ -45,12 +45,22 @@ object EventHandlers {
 
         }
         onEvent(Events.ON_CUTTING){
-            val playerEntity = it.cutterEntity
             val treeEntity = it.treeEntity
             treeEntity.treeComponent.cut()
         }
         onEvent(Events.ON_OPENING_TREASURE){
+            val treasureEntity = it.treasureEntity
+            treasureEntity.treasureComponent.open()
+        }
+        onEvent(Events.ON_DRINKING){
+            val playerEntity = it.playerEntity
+            if(playerEntity.hasPotion()){
+                playerEntity.playerComponent.drinking()
+            }
+        }
 
+        onEvent(Events.ON_ITEM_COMPLETED){
+            Gameplay.checkCompleted()
         }
     }
 

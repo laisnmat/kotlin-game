@@ -3,11 +3,9 @@ package com.ensimag.items
 import com.almasb.fxgl.dsl.getGameWorld
 import com.almasb.fxgl.dsl.getNotificationService
 import com.almasb.fxgl.dsl.getWorldProperties
-import com.almasb.fxgl.dsl.texture
 import com.almasb.fxgl.texture.Texture
 import com.ensimag.EntityType
 import com.ensimag.entity.PlayerEntity
-import com.ensimag.logInfo
 import javafx.geometry.Point2D
 import javafx.scene.Group
 import javafx.scene.input.MouseEvent
@@ -36,7 +34,7 @@ class ActionConfig(
     private lateinit var borderColor : Color
     private lateinit var backGroundColor : Color
     private lateinit var position : Point2D
-    private var textSize : Double = 10.0
+    private var textSize : Double = 16.0
 
 
     fun initView(position: Point2D, size: Double, gap: Double, borderWidth: Double, borderColor: Color, backGroundColor: Color) : Group {

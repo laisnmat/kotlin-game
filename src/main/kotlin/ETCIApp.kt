@@ -15,7 +15,6 @@ import com.ensimag.view.GameView
 class ETCIApp : GameApplication() {
 
     private val view : GameView = GameView()
-    //private val playerController : PlayerController = PlayerController()
     private var grid: AStarGrid? = null
 
     fun getGrid(): AStarGrid {

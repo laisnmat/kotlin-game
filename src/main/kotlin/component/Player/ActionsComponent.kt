@@ -48,6 +48,10 @@ class ActionsComponent : Component() {
         return (actions.find { it.action == Actions.FOOD }?.quantity ?: 0) > 0
     }
 
+    fun hasPotion(): Boolean {
+        return (actions.find { it.action == Actions.POTIONS }?.quantity ?: 0) > 0
+    }
+
     fun nextAction() {
         var index = actions.indexOfFirst { it.isSelected }
         actions[index].unSelect()

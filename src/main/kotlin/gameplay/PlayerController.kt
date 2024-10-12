@@ -1,15 +1,15 @@
 package com.ensimag.gameplay
 
 import com.almasb.fxgl.dsl.*
+import com.almasb.fxgl.input.InputModifier
 import com.almasb.fxgl.input.UserAction
 import com.ensimag.EntityType
 import com.ensimag.component.Player.PlayerComponent
 import com.ensimag.entity.NPCEntity
 import com.ensimag.entity.PlayerEntity
+import com.ensimag.entity.TreasureEntity
 import com.ensimag.entity.TreeEntity
-import com.ensimag.events.OnAttackEvent
-import com.ensimag.events.OnCuttingEvent
-import com.ensimag.events.OnEatingEvent
+import com.ensimag.events.*
 import com.ensimag.items.ActionConfig
 import com.ensimag.items.Actions
 import javafx.scene.input.KeyCode
@@ -61,10 +61,30 @@ class PlayerController() {
             }
         }, KeyCode.T)
 
+        getInput().addAction(object : UserAction("Next Items") {
+            override fun onActionBegin() {
+                playerEntity.actionsComponent.nextAction()
+
+            }
+        }, KeyCode.TAB)
+
+        getInput().addAction(object : UserAction("Previous Items") {
+            override fun onActionBegin() {
+                playerEntity.actionsComponent.previousAction()
+
+            }
+        }, KeyCode.TAB, InputModifier.SHIFT)
+
+
+
         getInput().addAction(object : UserAction("Attack") {
             override fun onActionBegin() {
                 if (getWorldProperties().getValue<ActionConfig>("selectedItem").action == Actions.FOOD) {
                     fire(OnEatingEvent(playerEntity))
+                    return@onActionBegin
+                }
+                if (getWorldProperties().getValue<ActionConfig>("selectedItem").action == Actions.POTIONS) {
+                    fire(OnDrinkingEvent(playerEntity))
                     return@onActionBegin
                 }
 
@@ -76,6 +96,12 @@ class PlayerController() {
                         }
                         if (it.type == EntityType.TREE && getWorldProperties().getValue<ActionConfig>("selectedItem").action == Actions.AXE) {
                             fire(OnCuttingEvent(playerEntity, it as TreeEntity))
+                        }
+                        if(it.type == EntityType.TREASURE && getWorldProperties().getValue<ActionConfig>("selectedItem").action == Actions.HAND) {
+                            fire(OnOpeningTreasureEvent(playerEntity, it as TreasureEntity))
+                        }
+                        if(it.type == EntityType.BOAT && getWorldProperties().getValue<ActionConfig>("selectedItem").action == Actions.HAND) {
+                            Gameplay.win()
                         }
                     }
                 }

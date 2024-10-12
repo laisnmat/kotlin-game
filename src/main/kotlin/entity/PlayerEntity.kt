@@ -3,6 +3,7 @@ package com.ensimag.entity
 import com.almasb.fxgl.entity.Entity
 import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent
 import com.ensimag.component.Player.*
+import com.sun.org.apache.xpath.internal.operations.Bool
 
 class PlayerEntity : Entity(){
     private lateinit var astar: AStarMoveComponent
@@ -48,6 +49,10 @@ class PlayerEntity : Entity(){
 
     fun hasFood(): Boolean {
         return actionsComponent.hasFood()
+    }
+
+    fun hasPotion(): Boolean {
+        return actionsComponent.hasPotion()
     }
 
     fun teleport(){

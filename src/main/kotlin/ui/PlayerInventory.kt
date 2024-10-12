@@ -4,12 +4,14 @@ import com.almasb.fxgl.dsl.FXGL
 import com.ensimag.EntityType
 import com.ensimag.component.Player.InventoryComponent
 import com.ensimag.logInfo
+import javafx.geometry.Point2D
 import javafx.scene.Group
 import javafx.scene.Parent
 import javafx.scene.paint.Color
 import javafx.scene.shape.Rectangle
 import javafx.scene.text.Font
 import javafx.scene.text.Text
+import javafx.scene.text.TextAlignment
 import kotlin.math.min
 
 
@@ -46,8 +48,6 @@ class PlayerInventoryView : Parent() {
     private var itemCenter = (WIDTH - (itemSize + GAP) * nbItemsPerLine - 2* GAP) / 2.0
 
 
-    var time = 0.0
-
     init{
 
         val background = Rectangle(WIDTH - 3.0, HEIGHT - 3.0)
@@ -63,74 +63,23 @@ class PlayerInventoryView : Parent() {
         text.y = fontSize
         text.wrappingWidth = WIDTH
         text.font = Font.font(fontSize)
-        text.textAlignment = javafx.scene.text.TextAlignment.CENTER
+        text.textAlignment = TextAlignment.CENTER
         text.fill = Color.web(textColor)
 
         children.add(text)
-        var i = 0
-        var j = 0
-        for (i in 0 until nbItemsPerLine) {
-            for (j in 0 until nbLines) {
-                val currentItem = inventory.items[i + j * nbItemsPerLine]
-                val m = inventory.getInventory().getItemQuantity(currentItem)
-                if(inventory.getInventory().hasItem(currentItem)){
-                    logInfo("Item ${currentItem.name} is in the inventory")
-                }
-                else{
-                    logInfo("Item ${currentItem.name} is not in the inventory")
-                }
-                val n = inventory.getInventory().getData(currentItem).get().maxStackQuantity
+        for (j in 0 until nbLines) {
+            for (i in 0 until nbItemsPerLine) {
+                logInfo("i = $i, j = $j")
+                val item = inventory.getItems()[j * nbItemsPerLine + i              ]
+                children.add(item.initView(
+                    position = Point2D(itemCenter + GAP + i * (itemSize + GAP), GAP + j * (itemSize + GAP) + fontSize*1.5),
+                    size = itemSize,
+                    gap = GAP,
+                    borderWidth = itemBorderWidth,
+                    borderColor = Color.web(itemBorderColor),
+                    backGroundColor = Color.web(itemColor)
+                ))
 
-
-                val item = Rectangle(itemSize, itemSize)
-                item.arcWidth = 10.0
-                item.arcHeight = 10.0
-                item.opacity = 0.7
-                item.strokeWidth = itemBorderWidth
-                item.x = itemCenter + GAP + i * (itemSize + GAP)
-                item.y = GAP + j * (itemSize + GAP) + fontSize*1.5
-
-                val text = Text("$m/$n")
-                text.x = item.x + GAP
-                text.y = item.y + itemSize - 5
-                text.wrappingWidth = itemSize - GAP*2
-                text.font = Font.font(8.0)
-                text.textAlignment = javafx.scene.text.TextAlignment.RIGHT
-                val colorGreen = Color.web("#00FF00")
-                val colorRed = Color.web("#FF0000")
-                item.fill = Color.web(itemColor)
-
-
-                if (m == n) {
-                    text.fill = colorGreen
-                    item.stroke = colorGreen
-                } else {
-                    text.fill = colorRed
-                    item.stroke = colorRed
-
-                }
-
-                val itemImage = currentItem.image
-                itemImage.translateX = item.x + itemSize*0.1
-                itemImage.translateY = item.y + itemSize*0.1
-                itemImage.fitHeight = 0.8 * itemSize
-                itemImage.fitWidth = 0.8 * itemSize
-
-
-
-                val node : Group = Group()
-                node.children.add(item)
-                node.children.add(itemImage)
-                node.children.add(text)
-
-
-                node.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED) {
-                    logInfo("${currentItem.name} selected")
-                }
-
-                inventory.getInventory().getData(currentItem).get().view = node
-
-                children.addAll(node)
 
             }
         }

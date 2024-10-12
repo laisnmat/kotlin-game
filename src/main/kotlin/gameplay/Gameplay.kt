@@ -4,8 +4,12 @@ import com.almasb.fxgl.dsl.*
 import com.ensimag.items.Items
 import com.almasb.fxgl.entity.Entity
 import com.ensimag.EntityType
+import com.ensimag.entity.BoatEntity
 import com.ensimag.entity.PlayerEntity
 import com.ensimag.entity.NPCEntity
+import com.ensimag.items.Actions
+import com.ensimag.logInfo
+import kotlin.random.Random
 
 object Gameplay {
     val player: PlayerEntity by lazy { getGameWorld().getSingleton(EntityType.PLAYER) as PlayerEntity }
@@ -19,7 +23,21 @@ object Gameplay {
     }
 
     fun addItem(item: Items){
-        player.inventoryComponent.add(item)
+        player.inventoryComponent.increaseQuantity(item, random(1, 3))
+    }
+    fun addRandomItem(){
+        val rand = Random.nextDouble(0.0, 1.0)
+        var probability = 0.0
+        for(item in player.inventoryComponent.getItems()){
+            probability += item.item.probability
+            if(probability >= rand){
+                addItem(item.item)
+                getNotificationService().pushNotification("You drop ${item.item.description.lowercase()}")
+                return
+            }
+        }
+        player.actionsComponent.increaseQuantity(Actions.POTIONS)
+        getNotificationService().pushNotification("You drop ${Actions.POTIONS.description.lowercase()}")
     }
 
     fun showMessage(message: String){
@@ -59,5 +77,14 @@ object Gameplay {
 
     fun configureInput(){
         playerController.configureInput()
+    }
+
+    fun checkCompleted(){
+        val isFull = player.inventoryComponent.isFull()
+        logInfo("isFull: $isFull")
+        if(isFull){
+            (getGameWorld().getSingleton(EntityType.BOAT) as BoatEntity).display()
+            getNotificationService().pushNotification("You can now leave the island ! Please join the boat")
+        }
     }
 }

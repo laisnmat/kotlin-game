@@ -206,6 +206,12 @@ class PlayerComponent : Component() {
         (entity as PlayerEntity).actionsComponent.decreaseQuantity(Actions.FOOD)
     }
 
+    fun drinking(){
+        hp.restorePercentageMax(85.0)
+        time = 0.0
+        (entity as PlayerEntity).actionsComponent.decreaseQuantity(Actions.POTIONS)
+    }
+
     fun teleport() {
         astar!!.grid
             .getRandomCell { obj: AStarCell -> obj.isWalkable }

@@ -10,4 +10,5 @@ enum class EntityType{
     BRIDGE,
     TREE,
     TREASURE,
+    BOAT,
 }

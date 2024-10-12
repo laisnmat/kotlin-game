@@ -39,37 +39,13 @@ enum class Actions(val texture: Texture, val description: String){
     ),
 }
 
-enum class Items(val image: Texture, val description: String, val goalValue: Int){
-    WOOD(
-        texture("items/wood.png"),
-        "Wood",
-        5
-    ),
-    NAIL(
-        texture("items/nail.png"),
-        "Nail",
-        200
-    ),
-    STRING(
-        texture("items/string.png"),
-        "String",
-        15
-    ),
-    TOOLS(
-        texture("items/tools.png"),
-        "Tools",
-        1
-    ),
-    MANUAL(
-        texture("items/manual.png"),
-        "Manual",
-        1
-    ),
-    MAP(
-        texture("items/map.png"),
-        "Map",
-        1
-    ),
+enum class Items(val image: Texture, val description: String, val goalValue: Int, val probability: Double){
+    WOOD(texture("items/wood.png"), "Wood", 5, 0.0),
+    NAIL(texture("items/nail.png"), "Nail", 200, 0.65),
+    STRING(texture("items/string.png"), "String", 15, 0.15),
+    TOOLS(texture("items/tools.png"), "Tools", 1, 0.025),
+    MANUAL(texture("items/manual.png"), "Manual", 1, 0.025),
+    MAP(texture("items/map.png"), "Map", 1, 0.025),
 
 }
 

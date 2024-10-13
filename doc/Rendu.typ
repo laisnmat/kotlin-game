@@ -220,8 +220,13 @@ Pour l'instant il n'y a pas d'ennemis à part la faim qui tiraille le joueur et 
 == Conception détaillée
 === Diagramme de classe logicielle
 A faire
-=== Diagramme de séquence
-A faire
+=== Diagrammes de séquence
+Pour ce qui a été conçu, on peut reprendre les diagrammes de la partie analyse qui permettaient d'implémenter les fonctionnalités générales du jeu. (Excepté celui du combat contre un fermier car non implémenté). En effet, ces fonctionnalités ayant été implémentées, les diagrammes de séquence associés sont toujours d'actualité.
+#pagebreak()
+Pour avoir une idée plus précise de l'implémentation, voici un exemple de diagramme de séquence plus précis pour l'ouverture d'un coffre au trésor:
+#place(center + horizon,rotate(90deg)[#figure(image("./Diagrammes/Sequence_conception_trésor.png", width: 145%), caption: "Diagramme de séquence récolte trésor")])
+#pagebreak()
+Nous voyons bien ici que l'architecture du jeu suit la logique décrite précédemment. En effet, une action de l'utilisateur passe par un controlleur puis une entity, puis un component. (A l'exception près des events et des fonctionnalités de FXGL qui sont gérées par le framework).
 === Diagramme états-transitions
 Optionnel A faire
 = Manuel utilisateur

@@ -95,7 +95,6 @@ Nous devons respecter le délai de rendu, qui est le 20 octobre 2024.
 
 = Document d'analyse
 == Cas d'utilisation
-A compléter avec d'autres si besoin
 === Récolter du bois
 Ci dessous la description du cas d'utilisation, récolter du bois:
 
@@ -121,13 +120,30 @@ Ci dessous la description du cas d'utilisation, récolter de la nourriture:
 
 1.1.1 Pour cela je peux défiler la molette ou appuyer sur *Tab* ou *Shift + Tab* pour naviguer à travers les outils en bas de l'écran.
 
-1.2 Une fois la hache équipée je m'approche d'un animal
+1.2 Une fois l'épée équipée je m'approche d'un animal
 
 1.3 J'appuie sur *Space* pour tuer l'animal et récolter de la nourriture qui se rajoute à ma nourriture affiché en bas.
 
 Voici le diagramme de séquence système associé:
 
 #figure(image("./Diagrammes/Diagramme_séquence_nourriture.png", width: 80%), caption: "Diagramme de séquence récolte nourriture")
+
+=== Se battre contre un fermier
+Ci dessous la description du cas d'utilisation, se battre contre un fermier:
+
+1.Pour survivre j'ai besoin de me battre
+
+1.1 Si je n'ai pas l'épée équipée je dois l'équipée
+
+1.1.1 Pour cela je peux défiler la molette ou appuyer sur *Tab* ou *Shift + Tab* pour naviguer à travers les outils en bas de l'écran.
+
+1.2 Une fois l'épée équipée je m'approche d'un fermier
+
+1.3 J'appuie sur *Space* autant de fois que nécessare pour mettre KO le fermier.
+
+Voici le diagramme de séquence système associé:
+
+#figure(image("./Diagrammes/Diagramme_séquence_combat.png", width: 80%), caption: "Diagramme de séquence combat fermier")
 
 === Se nourrir
 Ci dessous la description du cas d'utilisation, se nourrir:
@@ -136,13 +152,28 @@ Ci dessous la description du cas d'utilisation, se nourrir:
 
 1.1 Si je n'ai pas de nourriture je dois en récolter
 
-1.2 Lorsque j'en ai je dois la sélectionné, pour cela je peux défiler la molette ou appuyer sur *Tab* ou *Shift + Tab* pour naviguer à travers les outils en bas de l'écran.
+1.2 Lorsque j'en ai je dois la sélectionner, pour cela je peux défiler la molette ou appuyer sur *Tab* ou *Shift + Tab* pour naviguer à travers les outils en bas de l'écran.
 
 1.3 Une fois la nourriture équipée j'appuie sur *Space* pour la consommer et restaurer ma jauge de faim
 
 Voici le diagramme de séquence système associé:
 
 #figure(image("./Diagrammes/Diagramme_séquence_se_nourrir.png", width: 80%), caption: "Diagramme de séquence consommation nourriture")
+
+=== Se soigner
+Ci dessous la description du cas d'utilisation, se soigner:
+
+1.Pour survivre j'ai besoin de me soigner
+
+1.1 Si je n'ai pas de potion je dois en récolter dans un coffre
+
+1.2 Lorsque j'en ai je dois la sélectionner, pour cela je peux défiler la molette ou appuyer sur *Tab* ou *Shift + Tab* pour naviguer à travers les outils en bas de l'écran.
+
+1.3 Une fois la potion équipée j'appuie sur *Space* pour la consommer et restaurer ma jauge de vie
+
+Voici le diagramme de séquence système associé:
+
+#figure(image("./Diagrammes/Diagramme_séquence_soin.png", width: 80%), caption: "Diagramme de séquence consommation potion")
 === Ouvrir un coffre au trésor
 Ci dessous la description du cas d'utilisation, ouvrir un coffre au trésor:
 
@@ -159,6 +190,17 @@ Ci dessous la description du cas d'utilisation, ouvrir un coffre au trésor:
 Voici le diagramme de séquence système associé:
 
 #figure(image("./Diagrammes/Diagramme_séquence_trésor.png", width: 80%), caption: "Diagramme de séquence récolte trésor")
+
+=== Finir le jeu
+Ci dessous la description du cas d'utilisation, ouvrir un coffre au trésor:
+
+1.Une fois les matériaux accumulé je souhaite pouvoir finir le jeu:
+
+1.1 Je me déplace à l'aide des flèches vers le quai des îles.
+
+1.2 J'interagis grâce à *Space* pour construire le radeau et m'échapper
+
+#figure(image("./Diagrammes/Diagramme_séquence_end.png", width: 80%), caption: "Diagramme de séquence finir le jeu")
 
 == Diagramme de classes d'analyse
 A faire

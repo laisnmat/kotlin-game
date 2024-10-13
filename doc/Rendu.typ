@@ -232,4 +232,8 @@ Optionnel A faire
 = Manuel utilisateur
 A faire
 = Bilan sur les outils de modélisation
-A faire
+== Draw.io
+Draw.io est un outil de modélisation en ligne qui permet de réaliser des diagrammes. Il est très complet et facile d'utilisation. Il permet de partager les diagrammes avec un lien, de les exporter en image, pdf, xml, etc. De cette façon il est simple de travailler à plusieurs sur un diagramme. Il est très pratique pour réaliser des diagrammes simples et rapides. Cependant, il est moins adapté pour des diagrammes plus complexes et plus détaillés. En effet, il est difficile de gérer les relations entre les différents éléments d'un diagramme et même si on peut créer facilement des zones de textes, il est plus simples d'utiliser un outil qui prévoit déjà les zones prévues pour l'éciture d'attributs et de méthodes. C'est pourquoi nous l'avons utilisé pour les diagrammes de séquence uniquement.
+== Visual Paradigm
+*A faire la c'est copilot*
+Visual Paradigm est un outil de modélisation complet et très puissant. Il permet de réaliser des diagrammes de classes, de séquence et d'états-transitions. Il permet de générer du code à partir des diagrammes, de générer des diagrammes à partir du code, de réaliser des diagrammes UML, etc. Il est très complet et permet de réaliser des diagrammes très détaillés. Cependant, il est moins intuitif que Draw.io et il est plus difficile de partager les diagrammes. Il est plus adapté pour des diagrammes complexes et détaillés. C'est pourquoi nous l'avons utilisé pour les diagrammes de classes et d'états-transitions.

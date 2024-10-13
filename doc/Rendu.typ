@@ -94,8 +94,72 @@ Pour développer le jeu, nous utilisons le langage de programmation Kotlin. Nous
 Nous devons respecter le délai de rendu, qui est le 20 octobre 2024.
 
 = Document d'analyse
-== Cas d'utilisation (avec séquences)
-== Diagramme de classes
+== Cas d'utilisation
+=== Récolter du bois
+Ci dessous la description du cas d'utilisation, récolter du bois:
+
+1.Pour construire le radeau j'ai besoin de bois
+
+1.1 Si je n'ai pas la hache équipée je dois l'équipée
+
+1.1.1 Pour cela je peux défiler la molette ou appuyer sur *Tab* ou *Shift + Tab* pour naviguer à travers les outils en bas de l'écran.
+
+1.2 Une fois la hache équipée je m'approche d'un arbre coupable
+
+1.3 J'appuie sur *Space* pour couper l'arbre et récolter du bois qui se rajoute à mon bois affiché en haut à gauche.
+
+Voici le diagramme de séquence système associé:
+#figure(image("./Diagrammes/Diagramme_de_séquence_bois.png", width: 80%), caption: "Diagramme de séquence récolte bois")
+
+=== Récolter de la nourriture
+Ci dessous la description du cas d'utilisation, récolter de la nourriture:
+
+1.Pour survivre j'ai besoin de nourriture
+
+1.1 Si je n'ai pas l'épée équipée je dois l'équipée
+
+1.1.1 Pour cela je peux défiler la molette ou appuyer sur *Tab* ou *Shift + Tab* pour naviguer à travers les outils en bas de l'écran.
+
+1.2 Une fois la hache équipée je m'approche d'un animal
+
+1.3 J'appuie sur *Space* pour tuer l'animal et récolter de la nourriture qui se rajoute à ma nourriture affiché en bas.
+
+Voici le diagramme de séquence système associé:
+
+#figure(image("./Diagrammes/Diagramme_séquence_nourriture.png", width: 80%), caption: "Diagramme de séquence récolte nourriture")
+
+=== Se nourrir
+Ci dessous la description du cas d'utilisation, se nourrir:
+
+1.Pour survivre j'ai besoin de me nourrir
+
+1.1 Si je n'ai pas de nourriture je dois en récolter
+
+1.2 Lorsque j'en ai je dois la sélectionné, pour cela je peux défiler la molette ou appuyer sur *Tab* ou *Shift + Tab* pour naviguer à travers les outils en bas de l'écran.
+
+1.3 Une fois la nourriture équipée j'appuie sur *Space* pour la consommer et restaurer ma jauge de faim
+
+Voici le diagramme de séquence système associé:
+
+#figure(image("./Diagrammes/Diagramme_séquence_se_nourrir.png", width: 80%), caption: "Diagramme de séquence consommation nourriture")
+=== Ouvrir un coffre au trésor
+Ci dessous la description du cas d'utilisation, ouvrir un coffre au trésor:
+
+1.Pour survivre et m'échapper j'ai besoin d'objet disponible dans les coffres au trésor
+
+1.1 Si je n'ai pas la main équipée je dois l'équipée
+
+1.1.1 Pour cela je peux défiler la molette ou appuyer sur *Tab* ou *Shift + Tab* pour naviguer à travers les outils en bas de l'écran.
+
+1.2 Une fois la main équipée je m'approche d'un coffre au trésor
+
+1.3 J'appuie sur *Space* pour ouvrir le coffre et récolter un objet qui se rajoute à mon inventaire en cas de matériaux obtenue ou bien à ma barre d'outils en cas de potion de soin
+
+Voici le diagramme de séquence système associé:
+
+#figure(image("./Diagrammes/Diagramme_séquence_trésor.png", width: 80%), caption: "Diagramme de séquence récolte trésor")
+
+== Diagramme de classes d'analyse
 = Document de conception
 == Architecture logicielle
 == Description de l'incrément choisit

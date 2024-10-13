@@ -95,6 +95,7 @@ Nous devons respecter le délai de rendu, qui est le 20 octobre 2024.
 
 = Document d'analyse
 == Cas d'utilisation
+A compléter avec d'autres si besoin
 === Récolter du bois
 Ci dessous la description du cas d'utilisation, récolter du bois:
 
@@ -160,12 +161,28 @@ Voici le diagramme de séquence système associé:
 #figure(image("./Diagrammes/Diagramme_séquence_trésor.png", width: 80%), caption: "Diagramme de séquence récolte trésor")
 
 == Diagramme de classes d'analyse
+A faire
 = Document de conception
 == Architecture logicielle
+A faire
 == Description de l'incrément choisit
+Nous avons décidé, comme premier incrément, de fournir une partie du jeu déjà jouable. Nous avons réalisé une map où l'on peut se déplacer avec un personnage afin de survivre. Nous avons implémenté l'inventaire qui permet de posséder des matériaux et outils. Nous avons également implémenté les actions réalisable par le personnage qui sont:
+- ouvrir un coffre
+- couper un arbre pour obtenir du bois
+- tuer un poulet pour obtenir de la nourriture
+- manger
+- se soigner
+La map contient quatres îles sans conditions d'accès pour l'instant avec des zones où l'on peut marcher, passer devant des objets et passer derrière des objets. L'inventaire prend la forme d'une check-list où l'on peut voir si on a ou non assez de matériaux pour quitter l'île. Le bois est disponible en coupant des arbres qui repoussent avec le temps, les autres matériaux avec les coffres qui se remplissent également avec le temps.
+Une fois les matériaux obtenu, on peut quitter l'île en se rendant au radeau, au bout du quai de l'île désertique et en interagissant avec.
+Pour l'instant il n'y a pas d'ennemis à part la faim qui tiraille le joueur et menace de lui faire perdre de la vie si la jauge est vide.
 == Conception détaillée
 === Diagramme de classe logicielle
+A faire
 === Diagramme de séquence
+A faire
 === Diagramme états-transitions
+Optionnel A faire
 = Manuel utilisateur
+A faire
 = Bilan sur les outils de modélisation
+A faire

@@ -303,7 +303,8 @@ Voici le diagramme de classe logicielle modifié durant nos développements :
 
 #figure(image("./Diagrammes/UML.png", width: 100%), caption: "Diagramme de classe logicielle")
 
-Le diagramme de classe logicielle étant très complet, il est quasiment illisible sur tirage A4. Nous vous conseillons de le consulter dans le dossier *Doc/Diagrammes/Diagramme_classes_conception.png*.
+Le diagramme de classe logicielle étant très complet, il est quasiment illisible sur tirage A4. Nous vous conseillons de le consulter dans le dossier *Doc/Diagrammes/UML.pdf*.
+(Et non png)
 
 === Diagrammes de séquence
 

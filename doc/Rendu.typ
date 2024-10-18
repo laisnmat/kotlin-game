@@ -24,74 +24,91 @@
 
 *Titre du projet : Escape The Chicken Island*
 
-Ce cahier des charges décrit le projet de jeu vidéo *Escape The Chicken Island* dans sa globalité. Il décrit donc plus que simplement l'incrément réalisé pour le rendu de projet.
+Ce cahier des charges décrit le projet de jeu vidéo *Escape The Chicken Island* dans sa globalité. Il présente donc le jeu dans son ensemble et non uniquement l'incrément réalisé pour le rendu du projet.
 
 == Objectif
 
-Développer un jeu d’aventure en 2D, avec interface graphique. Le joueur incarne un aventurier qui doit s’échapper d’un archipel. L’archipel est composé de quatre îles. Pour s'échapper, l'aventurier doit se déplacer d'île en île, sur laquelle il doit trouver des trésor et collecter des objets afin de construire un radeau. Jeu accessible à tout le monde et simple à prendre en main.
+Développer un jeu d’aventure en 2D, avec interface graphique. Le joueur incarne un aventurier qui doit s’échapper d’un archipel. L’archipel est composé de quatre îles. Pour s'échapper, l'aventurier doit se déplacer d'île en île, sur lesquelles il doit trouver des trésors et collecter des objets afin de construire un radeau. Le jeu est accessible à tout le monde et simple à prendre en main.
 
 == Scénario
 
-Nous sommes en 1720. Joseph, un marin courageux mais malchanceux, se retrouve naufragé après une violente tempête. Il échoue sur une île étrange nommée Chicken Island, un lieu mystérieux peuplé d’animaux et d'habitants... avec une obsession inexplicable pour les poules! Joseph doit non seulement survivre, mais aussi comprendre pourquoi cette île entière semble être régie par les poules et leurs adorateurs.
+Nous sommes en 1720. Joseph, un marin courageux mais malchanceux, se retrouve naufragé après une violente tempête. Il échoue sur une île étrange nommée Chicken Island, un lieu mystérieux peuplé d’animaux et d'habitants... avec une obsession inexplicable pour les poules ! Joseph doit non seulement survivre, mais aussi comprendre pourquoi cette île entière semble être régie par les poules et leurs adorateurs.
 
 == Mécanismes de jeu
 
 === Collecte d’objets
-Le personnage principal peut collecter divers objets, comme du bois, des plantes, de la nourriture, et ouvrir des trésors pour collecter des potions, ficelles, clous, etc. Les objets permettent la survie du personnage et la construction d’un radeau pour s’échapper de l’île. 
+
+Le personnage principal peut collecter divers objets, comme du bois, des plantes, de la nourriture, et ouvrir des trésors pour récupérer des potions, ficelles, clous, etc. Les objets permettent la survie du personnage et la construction d’un radeau pour s’échapper de l’île.
 
 === Îles
-Chaque île dispose d’un trésor unique. Les îles sont reliées entre elles par une passerelle. Nous pouvons accéder aux îles selon un ordre prédéfini, nous pouvons entrer sur une île seulement si on a collecté le trésor de l’île précédente. Chaque île a un taux d’apparition d’animaux différent.  
+
+Chaque île dispose d’un trésor unique. Les îles sont reliées entre elles par une passerelle. On ne peut accéder aux îles que dans un ordre prédéfini, et l’entrée sur une île n’est possible que si le trésor de l’île précédente a été collecté. Chaque île a un taux d’apparition d’animaux différent.
 
 === Évolution du Chicken-Raft
-Le bateau de Joseph est présent sur l’île de départ, mais en piteux état. C’est en ramassant divers objets en grande quantité, que nous pourrons construire un nouveau radeau. Le radeau changera visuellement à chaque évolution.
+
+Le bateau de Joseph est présent sur l’île de départ, mais en piteux état. C’est en ramassant divers objets en grande quantité que nous pourrons construire un nouveau radeau. Le radeau changera visuellement à chaque évolution.
 
 === Survie
-Le personnage dispose d’une jauge de vie. Elle diminue s’il subit des attaques d’ennemis, où si sa jauge de faim est vide. Pour augmenter la jauge de vie, il faut boire des potions présentes dans les coffres.
-Le personnage dispose également d’une jauge de faim, si la jauge est vide, ses vies diminuent rapidement entraînant sa mort. Chaque île dispose initialement d’un nombre d’animaux prédéfini, et à chaque fois qu’on tue un animal, il met un certain temps avant de réapparaître. Le taux de réapparition des animaux varient en fonction des îles. Les îles de départ ont un taux d’apparition plus bas que les îles finales. Si le joueur reste trop longtemps sur les îles, il n’aura plus assez de nourriture pour se nourrir et il mourra, car la jauge de faim descend plus vite que l’apparition de nouveaux animaux.
+
+Le personnage dispose d’une jauge de vie. Celle-ci diminue s’il subit des attaques d’ennemis ou si sa jauge de faim est vide. Pour augmenter la jauge de vie, il faut boire des potions présentes dans les coffres. Le personnage dispose également d’une jauge de faim ; si elle est vide, la jauge de vie diminue rapidement, entraînant sa mort. Chaque île dispose initialement d’un nombre prédéfini d’animaux, et chaque fois qu’un animal est tué, il met un certain temps à réapparaître. Le taux de réapparition des animaux varie selon les îles. Les premières îles ont un taux d’apparition plus bas que les îles finales. Si le joueur reste trop longtemps sur une île, il n’aura plus assez de nourriture pour se nourrir et mourra, car la jauge de faim descend plus vite que l’apparition des nouveaux animaux.
 
 === Déplacement
 
-Le joueur peut marcher. Il ne peut pas sortir des limites de la map.
+Le joueur peut marcher, mais ne peut pas sortir des limites de la carte.
 
 === Actions
 
-Le jeu dispose d’un panel d’action comprenant:
-- Main: permet au joueur d’ouvrir des coffres.
-- Epée: permet de tuer des animaux, ennemis
-- Hache: permet de couper des arbres, pour obtenir du bois
-- Chicken: manger du poulet, pour restaurer la jauge de faim
-- Potion: boire une potion, pour restaurer la jauge de vie 
+Le jeu propose un panel d’actions, comprenant :
+- *Main* : permet d’ouvrir des coffres.
+- *Épée* : permet de tuer des animaux et des ennemis.
+- *Hache* : permet de couper des arbres pour obtenir du bois.
+- *Poulet* : permet de manger du poulet pour restaurer la jauge de faim.
+- *Potion* : permet de boire une potion pour restaurer la jauge de vie.
 
-== Personnage non jouable
+== Personnages non jouables
 
 === Animaux
-Il existe différents animaux, qui offrent plus ou moins de nourriture en fonction du type d’animal. Par exemple, un lion offrira davantage de nourriture qu’une poule. Certains animaux sont inoffensifs, d’autres peuvent nous attaquer. 
+
+Il existe différents animaux, qui offrent plus ou moins de nourriture selon leur type. Par exemple, un lion fournira plus de nourriture qu’une poule. Certains animaux sont inoffensifs, tandis que d’autres peuvent attaquer le joueur.
 
 === Fermiers
-Élève des animaux. Si on s’approche trop de leurs animaux, ils nous attaquent. Ils sont mis KO, s’ils encaissent trop de coups.
+
+Ils élèvent des animaux. Si le joueur s’approche trop de leurs animaux, ils l’attaquent. Les fermiers sont mis K.O. s’ils encaissent trop de coups.
 
 == Interfaces
 
 === Menu
-Nous pouvons naviguer dans un menu qui permet de changer les paramètres, d’observer la carte, de quitter le jeu.
+
+Un menu permet de changer les paramètres, de consulter la carte ou de quitter le jeu.
 
 === Paramètres
-Permet de modifier le son du jeu et les touches du clavier.
+
+Il est possible de modifier le volume du jeu et les touches du clavier.
 
 === Inventaire
-L’inventaire est situé en haut à gauche de l’interface, via une icône représentant chaque objet à obtenir, la quantité dont on en dispose, et son nombre associé afin de terminer le jeu (construire le radeau). 
 
-=== Map 
-Le joueur se déplace sur la map, la caméra se déplace en temps réel. Une mini-carte sera présente en bas à gauche de l’écran.
+L’inventaire est situé en haut à gauche de l’écran, via une icône représentant chaque objet à obtenir, avec la quantité disponible et le nombre nécessaire pour terminer le jeu (construire le radeau).
 
-=== Dialog box
-Une dialog box sera présente afin d’indiquer le but du jeu, d’afficher les différentes étapes du jeu, les règles.
+=== Barre d’outils
 
-== Spécifications techniques 
-Pour développer le jeu, nous utilisons le langage de programmation Kotlin. Nous utilisons également le framework JavaFX Game Library (FXGL), afin de faciliter le développement du jeu vidéo, et de disposer d’une interface graphique. Le jeu doit être compatible sur Windows, Mac, Linux.
+La barre d’outils est située en bas de l’écran, permettant de sélectionner l’outil à utiliser.
+
+=== Carte
+
+Le joueur se déplace sur la carte, et la caméra suit en temps réel. Une mini-carte est présente en bas à gauche de l’écran.
+
+=== Boîte de dialogue
+
+Une boîte de dialogue affiche le but du jeu, les différentes étapes et les règles.
+
+== Spécifications techniques
+
+Le jeu est développé en Kotlin, en utilisant la bibliothèque JavaFX Game Library (FXGL) pour faciliter le développement et fournir une interface graphique. Il doit être compatible avec Windows, Mac et Linux.
 
 == Contraintes
-Nous devons respecter le délai de rendu, qui est le 20 octobre 2024.
+
+Le projet doit être rendu avant le 20 octobre 2024.
+
 
 = Document d'analyse
 == Cas d'utilisation

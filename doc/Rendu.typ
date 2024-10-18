@@ -301,7 +301,7 @@ Pour faire suite au diagramme de classe d'analyse, nous avons pu étayé nos cla
 
 Voici le diagramme de classe logicielle modifié durant nos développements :
 
-// #figure(image("./Diagrammes/Diagramme_de_classe_logicielle.png", width: 100%), caption: "Diagramme de classe logicielle")
+#figure(image("./Diagrammes/UML.png", width: 100%), caption: "Diagramme de classe logicielle")
 
 Le diagramme de classe logicielle étant très complet, il est quasiment illisible sur tirage A4. Nous vous conseillons de le consulter dans le dossier *Doc/Diagrammes/Diagramme_classes_conception.png*.
 

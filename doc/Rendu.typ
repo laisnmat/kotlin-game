@@ -226,11 +226,25 @@ Pour ce qui a été conçu, on peut reprendre les diagrammes de la partie analys
 Pour avoir une idée plus précise de l'implémentation, voici un exemple de diagramme de séquence plus précis pour l'ouverture d'un coffre au trésor:
 #place(center + horizon,rotate(90deg)[#figure(image("./Diagrammes/Sequence_conception_trésor.png", width: 145%), caption: "Diagramme de séquence récolte trésor")])
 #pagebreak()
-Nous voyons bien ici que l'architecture du jeu suit la logique décrite précédemment. En effet, une action de l'utilisateur passe par un controlleur puis une entity, puis un component. (A l'exception près des events et des fonctionnalités de FXGL qui sont gérées par le framework).
-=== Diagramme états-transitions
-Optionnel A faire
+Nous voyons bien ici que l'architecture du jeu suit la logique décrite précédemment. En effet, une action de l'utilisateur passe par un controlleur puis une entity, puis un component. (A l'exception près des events gérés différemments et des fonctionnalités de FXGL qui sont gérées par le framework).
 = Manuel utilisateur
-A faire
+La partie compilation du projet et lancement du jeu est réalisable en suivant les instructions du A_LIRE.txt fourni avec le projet.
+
+Concernant le jeu en lui-même, voici les commandes utilisables:
+- Les flèches directionnelles pour se déplacer
+- *Tab* ou *Shift + Tab* ou défilement de la molette pour naviguer à travers les outils en bas de l'écran (on peut aussi cliquer sur les outils)
+- *Space* pour interagir avec l'outil équipé
+- *T* pour se téléporter aléatoirement sur la map (fonction pour faciliter developpement)
+- *Echap* pour ouvrir le menu géré grâce à FXGL qui propose pour l'instant de quitter le jeu ou changer des options comme: le volume (pas de son pour l'instant), les touches et la langue du menu.
+
+*Quelques astuces*:
+- Les arbres de l'île en haut à gauche sont les seules coupable et repoussent avec le temps.
+- Les coffres se remplissent selon une certaines probabilité et contiennent un objet aléatoire pour construire le radeau ou une potion.
+- De base, quasimment tout les matériaux sont déjà possédés par le joueur afin de tester le jeu plus facilement.
+- La jauge de faim descend attention à manger pour ne pas mourir.
+- Moins il y a de poulet sur les îles plus ils mettent de temps à se reproduire.
+- Penser à utiliser le bon outil selon l'action désirée. (Pour le radeau il s'agit de la main)
+- Il n'y a qu'une map disponible et on ne peut pas rentrer dans les grottes ou maisons.
 = Bilan sur les outils de modélisation
 == Draw.io
 Draw.io est un outil de modélisation en ligne qui permet de réaliser des diagrammes. Il est très complet et facile d'utilisation. Il permet de partager les diagrammes avec un lien, de les exporter en image, pdf, xml, etc. De cette façon il est simple de travailler à plusieurs sur un diagramme. Il est très pratique pour réaliser des diagrammes simples et rapides. Cependant, il est moins adapté pour des diagrammes plus complexes et plus détaillés. En effet, il est difficile de gérer les relations entre les différents éléments d'un diagramme et même si on peut créer facilement des zones de textes, il est plus simples d'utiliser un outil qui prévoit déjà les zones prévues pour l'éciture d'attributs et de méthodes. C'est pourquoi nous l'avons utilisé pour les diagrammes de séquence uniquement.

@@ -95,6 +95,15 @@ Nous devons respecter le délai de rendu, qui est le 20 octobre 2024.
 
 = Document d'analyse
 == Cas d'utilisation
+Voici le diagramme de cas d'utilisation pour la partie joueur du jeu *Escape The Chicken Island*:
+
+#figure(image("./Diagrammes/Diagramme_de_cas_d'utilisation_joueur.png", width: 100%), caption: "Diagramme de cas d'utilisation joueur")
+
+Voici le diagramme pour la partie système:
+
+#figure(image("./Diagrammes/Diagramme_de_cas_d'utilisation_systeme.png", width: 100%), caption: "Diagramme de cas d'utilisation système")
+
+Afin de détailler les cas d'utilisation, voici les descriptions des cas d'utilisation du joueur:
 === Récolter du bois
 Ci dessous la description du cas d'utilisation, récolter du bois:
 

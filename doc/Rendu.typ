@@ -250,10 +250,30 @@ Le joueur interagit en appuyant sur *Space* pour construire le radeau et s'écha
 #figure(image("./Diagrammes/Diagramme_séquence_end.png", width: 80%), caption: "Diagramme de séquence finir le jeu")
 
 == Diagramme de classes d'analyse
-Afin de démarrer le code du jeu, nous avons réalisé un diagramme de classes d'analyse. Ce diagramme permet de définir les classes et les relations entre elles. Il est important de noter que ce diagramme est une première version et qu'il est susceptible d'être différent de la version finale présentée dans le document de conception.
+
+Afin de démarrer le code du jeu, nous avons réalisé un diagramme de classes d'analyse. Ce diagramme permet de définir les classes et les relations entre elles. Il est important de noter que ce diagramme est une première version et qu'il est susceptible d'être différent de la version finale présentée dans le document de conception. 
+
+Lors de cette phase, nous nous sommes inspirés des patrons de conception *Singleton* et *Fabrique* afin de créer des classes qui permettent de gérer les objets du jeu de manière efficace. En effet, le joueur suit le patron du *Singleton* pour être unique, tandis que les objets du jeu suivent le patron de la *Fabrique* pour être créés de manière dynamique.
+
+Voici le diagramme de classes d'analyse :
+
+#figure(image("./Diagrammes/Diagramme_de_classes_d'analyse.svg", width: 100%), caption: "Diagramme de classe d'analyse")
+
+Vous pouvez consulter le diagramme dans le dossier *Doc/Diagrammes/Diagramme_classe_analyse.png*.
+
 = Document de conception
 == Architecture logicielle
-A faire
+#figure(image("./Diagrammes/DIagramme_Architecture.svg", width: 50%), caption: "Diagramme d'architecture")
+
+Concernant l'architecture de notre jeu, nous avons choisi de suivre un modèle MVC tout en l'adaptant légèrement afin d'utiliser FXGL et Kotlin efficacement, comme vous pouvez le voir ci-dessus. Cela permet de différencier les couches de notre application afin de la rendre plus modulaire et plus facile à maintenir. Le but est donc de réunir les classes qui ont des responsabilités similaires et de les regrouper dans des packages distincts.
+
+Nous avons donc la vue, qui regroupe la carte, la génération des objets sur cette carte, les animations, les sprites, l'inventaire et la barre d'outils.
+
+Le contrôleur gère les interactions entre le joueur et la vue, ainsi que les événements.
+
+Le modèle contient les classes qui représentent le gameplay du jeu et les différents composants de notre jeu. Ici les composants ou *components* sont des classes qui servent de modèle. On a donc un *component* pour chaque entité du jeu, comme le joueur, les animaux, les coffres, etc.
+
+
 == Description de l'incrément choisit
 == Premier incrément
 
@@ -277,9 +297,15 @@ Pour l'instant, il n'y a pas d'ennemis, à l'exception de la faim, qui tire sur 
 
 == Conception détaillée
 === Diagramme de classe logicielle
-A faire
+Pour faire suite au diagramme de classe d'analyse, nous avons pu étayé nos classes et leurs relations. Effectivement, pour respecter l'architecture décrite plus haut tout en utilisant efficacement FXGL et Kotlin, nous avons dû adapter notre diagramme de classe. Nous avons également adapté légèrement l'architecture afin de rendre un premier incrément complet, nous sommes conscient que l'architecture peut être amélioré pour le jeu final.
+
+Voici le diagramme de classe logicielle modifié durant nos développements :
+
+// #figure(image("./Diagrammes/Diagramme_de_classe_logicielle.png", width: 100%), caption: "Diagramme de classe logicielle")
+
+Le diagramme de classe logicielle étant très complet, il est quasiment illisible sur tirage A4. Nous vous conseillons de le consulter dans le dossier *Doc/Diagrammes/Diagramme_classes_conception.png*.
+
 === Diagrammes de séquence
-== Diagrammes d'analyse et d'implémentation
 
 Pour ce qui a été conçu, on peut reprendre les diagrammes de la partie analyse qui permettaient d'implémenter les fonctionnalités générales du jeu. (Excepté celui du combat contre un fermier, car non implémenté). En effet, ces fonctionnalités ayant été implémentées, les diagrammes de séquence associés sont toujours d'actualité.
 

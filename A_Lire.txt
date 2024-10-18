@@ -15,6 +15,4 @@ A la racine il y a le fichier pom.xml qui est un fichier de configuration java.
 
 Pour lancer le jeu sur les machines de l'école il faut lancer les commandes suivantes à la racine du projet:
 
-mvn install
-mvn clean package (Génère dans un dossier target à la racine du projet)
-java -jar @chemin_du_projet/target/tp-acvl-kotlin-1.0-SNAPSHOT.jar (Vous pouver récupérer l'adresse dans la sortie de la commande précédente)
+run.sh

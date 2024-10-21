@@ -114,7 +114,7 @@ Le projet doit être rendu avant le 20 octobre 2024.
 Voici le diagramme de cas d'utilisation pour la partie joueur du jeu *Escape The Chicken Island*:
 
 #figure(image("./Diagrammes/Diagramme_de_cas_d'utilisation_joueur.png", width: 100%), caption: "Diagramme de cas d'utilisation joueur")
-
+#pagebreak()
 Voici le diagramme pour la partie système:
 
 #figure(image("./Diagrammes/Diagramme_de_cas_d'utilisation_systeme.png", width: 100%), caption: "Diagramme de cas d'utilisation système")
@@ -136,7 +136,7 @@ Une fois la hache équipée, le joueur s'approche d'un arbre susceptible d'être
 
 1.3 *Couper l'arbre :*  
 Le joueur appuie sur *Space* pour couper l'arbre et récolter du bois. Le bois collecté est ajouté à la quantité de bois affichée en haut à gauche de l'écran.
-
+#pagebreak()
 Voici le diagramme de séquence système associé:
 #figure(image("./Diagrammes/Diagramme_de_séquence_bois.png", width: 80%), caption: "Diagramme de séquence récolte bois")
 
@@ -157,7 +157,8 @@ Une fois l'épée équipée, le joueur s'approche d'un animal.
 
 1.3 *Tuer l'animal :*  
 Le joueur appuie sur *Space* pour tuer l'animal et récolter de la nourriture. La nourriture collectée est ajoutée à la quantité de nourriture affichée en bas de l'écran.
-
+#pagebreak()
+Voici le diagramme de séquence système associé:
 
 #figure(image("./Diagrammes/Diagramme_séquence_nourriture.png", width: 80%), caption: "Diagramme de séquence récolte nourriture")
 
@@ -179,6 +180,9 @@ Une fois l'épée équipée, le joueur s'approche d'un fermier.
 1.3 *Se battre contre le fermier :*  
 Le joueur appuie sur *Space* autant de fois que nécessaire pour mettre K.O. le fermier.
 
+
+#pagebreak()
+Voici le diagramme de séquence système associé:
 #figure(image("./Diagrammes/Diagramme_séquence_combat.png", width: 80%), caption: "Diagramme de séquence combat fermier")
 
 === Se nourrir
@@ -213,7 +217,8 @@ Lorsque le joueur dispose d'une potion, il doit la sélectionner. Pour cela, il 
 1.3 *Consommer la potion :*  
 Une fois la potion équipée, le joueur appuie sur *Space* pour la consommer et restaurer sa jauge de vie.
 
-
+#pagebreak()
+Voici le diagramme de séquence système associé:
 #figure(image("./Diagrammes/Diagramme_séquence_soin.png", width: 80%), caption: "Diagramme de séquence consommation potion")
 === Ouvrir un coffre au trésor
 
@@ -233,6 +238,8 @@ Une fois la main équipée, le joueur s'approche d'un coffre au trésor.
 1.3 *Ouvrir le coffre :*  
 Le joueur appuie sur *Space* pour ouvrir le coffre et récolter un objet. L'objet collecté est ajouté à l'inventaire s'il s'agit de matériaux, ou à la barre d'outils s'il s'agit d'une potion de soin.
 
+#pagebreak()
+Voici le diagramme de séquence système associé:
 #figure(image("./Diagrammes/Diagramme_séquence_trésor.png", width: 80%), caption: "Diagramme de séquence récolte trésor")
 
 === Finir le jeu
@@ -247,6 +254,8 @@ Le joueur se déplace à l'aide des flèches vers le quai des îles.
 1.2 *Construire le radeau :*  
 Le joueur interagit en appuyant sur *Space* pour construire le radeau et s'échapper.
 
+#pagebreak()
+Voici le diagramme de séquence système associé:
 #figure(image("./Diagrammes/Diagramme_séquence_end.png", width: 80%), caption: "Diagramme de séquence finir le jeu")
 
 == Diagramme de classes d'analyse
@@ -255,12 +264,13 @@ Afin de démarrer le code du jeu, nous avons réalisé un diagramme de classes d
 
 Lors de cette phase, nous nous sommes inspirés des patrons de conception *Singleton* et *Fabrique* afin de créer des classes qui permettent de gérer les objets du jeu de manière efficace. En effet, le joueur suit le patron du *Singleton* pour être unique, tandis que les objets du jeu suivent le patron de la *Fabrique* pour être créés de manière dynamique.
 
+#pagebreak()
 Voici le diagramme de classes d'analyse :
 
 #figure(image("./Diagrammes/Diagramme_de_classes_d'analyse.svg", width: 100%), caption: "Diagramme de classe d'analyse")
 
 Vous pouvez consulter le diagramme dans le dossier *Doc/Diagrammes/Diagramme_classe_analyse.png*.
-
+#pagebreak()
 = Document de conception
 == Architecture logicielle
 #figure(image("./Diagrammes/DIagramme_Architecture.svg", width: 50%), caption: "Diagramme d'architecture")
@@ -273,7 +283,7 @@ Le contrôleur gère les interactions entre le joueur et la vue, ainsi que les �
 
 Le modèle contient les classes qui représentent le gameplay du jeu et les différents composants de notre jeu. Ici les composants ou *components* sont des classes qui servent de modèle. On a donc un *component* pour chaque entité du jeu, comme le joueur, les animaux, les coffres, etc.
 
-
+#pagebreak()
 == Description de l'incrément choisit
 == Premier incrément
 
@@ -298,7 +308,7 @@ Pour l'instant, il n'y a pas d'ennemis, à l'exception de la faim, qui tire sur 
 == Conception détaillée
 === Diagramme de classe logicielle
 Pour faire suite au diagramme de classe d'analyse, nous avons pu étayé nos classes et leurs relations. Effectivement, pour respecter l'architecture décrite plus haut tout en utilisant efficacement FXGL et Kotlin, nous avons dû adapter notre diagramme de classe. Nous avons également adapté légèrement l'architecture afin de rendre un premier incrément complet, nous sommes conscient que l'architecture peut être amélioré pour le jeu final.
-
+#pagebreak()
 Voici le diagramme de classe logicielle modifié durant nos développements :
 
 #figure(image("./Diagrammes/UML.png", width: 100%), caption: "Diagramme de classe logicielle")

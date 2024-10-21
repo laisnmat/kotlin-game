@@ -9,10 +9,10 @@ Dossier src/main
 
     Contient un sous dossier Kotlin avec le code source
     Contient un sous dossier resources avec les différentes textures qui ont permis de faire la map.
-    Prévoit aussi les dossier permettant d'intégrer des sons etc
 
 A la racine il y a le fichier pom.xml qui est un fichier de configuration java.
+On trouve également le run.sh qui permet de lancer le jeu
 
-Pour lancer le jeu sur les machines de l'école il faut lancer les commandes suivantes à la racine du projet:
+Pour lancer le jeu sur les machines de l'école il faut lancer la commande suivantes à la racine du projet:
 
 run.sh
